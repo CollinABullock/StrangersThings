@@ -7,7 +7,8 @@ function App() {
 
   return (
     <>
-     
+     <h1>Stranger's Things</h1>
+     <h4>A project by Collin, Fletcher, Rocco, and Taylor</h4>
     </>
   )
 }
