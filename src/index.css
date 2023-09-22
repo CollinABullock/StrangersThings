@@ -67,3 +67,42 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#nav-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+  font-size: large;
+}
+
+#navbar{
+  padding: 2em;
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  background-color: black;
+  color: aliceblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-size: x-large;
+}
+
+#navbar a{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.h1-text{
+  margin-top: 4em;
+}
