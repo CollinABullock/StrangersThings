@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import AllPosts from './components/AllPosts';
+import { Routes, Route, Link, useNavigate } from "react-router-dom"; 
+import { BrowserRouter } from 'react-router-dom';
+import CreateNewPost from './components/newPostForm';
+import { CreatePost } from './components/FetchAllPosts';
 
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <h1>Stranger's Things</h1>
-     <h4>A project by Collin, Fletcher, Rocco, and Taylor</h4>
+
     </>
   )
 }
