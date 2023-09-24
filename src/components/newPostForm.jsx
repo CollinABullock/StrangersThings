@@ -9,20 +9,22 @@ export default function CreateNewPost( { posts, setPosts } ) {
 
   async function handleSubmit(p) {
     p.preventDefault();
-    const apiData = await CreatePost(title, description, price);
+    const apiData = await CreatePost(title, description, price, location, willDeliver);
     if (apiData.success) {
       console.log("New Post", apiData.data.newPost);
     
       const newPostList = [...posts, apiData.data.newPost];
       setPosts(newPostList);
-
       setTitle("");
       setDescription("");
       setprice("");
+      setLocation("");
+      setwillDeliver("");
     } else {
       setError(apiData.error.message);
     }
   }
+
   return (
     <>
     <h1>Post Your Own Stuff!</h1>
@@ -48,6 +50,20 @@ export default function CreateNewPost( { posts, setPosts } ) {
       name="price"
       placeholder="How much do you want for it?"
       onChange={(p) => setprice(p.target.value)}
+      /><br />
+         <input 
+      value={location}
+      type="text" 
+      name="location"
+      placeholder="What's the address"
+      onChange={(p) => setLocation(p.target.value)}
+      /><br />
+         <p>Will You Deliver It?</p>
+         <input 
+      value={willDeliver}
+      type="checkbox"
+      name="Will Deliver"
+      onChange={(p) => setwillDeliver(p.target.value)}
       /><br />
       <button>Submit</button>
     </form>
