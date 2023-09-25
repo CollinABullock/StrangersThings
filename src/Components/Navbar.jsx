@@ -6,11 +6,12 @@ const Navbar = () => {
   return (
     <nav id='navbar'>
       <Link to={"/"}>HOME</Link>
-      <Link to={"/login"}>LOGIN</Link>
       <Link to={"/posts"}>POSTS</Link>
+      <Link to={"/login"}>LOGIN</Link>
 
     </nav>
   );
 };
 
 export default Navbar
+
