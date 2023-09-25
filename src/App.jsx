@@ -1,11 +1,9 @@
+
 import { useState, useEffect } from 'react'
 import Login from "./components/Login";
 import { Routes, Route, } from "react-router-dom";
 import Register from "./components/Register"
 import NavBar from "./components/NavBar";
-
-
-
 import './App.css'
 
 function App() {
@@ -37,8 +35,15 @@ function App() {
     fetchData();
   }, []);
   return (
+
     <div>
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+=======
+    <>
+
+    </>
+  )
+}
 
     <Routes>
    ?
