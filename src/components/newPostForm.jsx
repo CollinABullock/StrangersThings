@@ -58,7 +58,7 @@ export default function CreateNewPost( { posts, setPosts } ) {
       placeholder="What's the address"
       onChange={(p) => setLocation(p.target.value)}
       /><br />
-      <button>Submit</button>
+      <button id="createNewPost" type="submit">Submit</button>
     </form>
     </>
   );
