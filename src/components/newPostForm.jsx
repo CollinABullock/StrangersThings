@@ -5,6 +5,7 @@ export default function CreateNewPost( { posts, setPosts } ) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setprice] = useState("");
+  const [location, setLocation] = useState("");
   const [error, setError] = useState(null);
 
   async function handleSubmit(p) {
@@ -51,7 +52,7 @@ export default function CreateNewPost( { posts, setPosts } ) {
       onChange={(p) => setprice(p.target.value)}
       /><br />
          <input 
-      value={Text}
+      value={location}
       type="text" 
       name="location"
       placeholder="What's the address"
