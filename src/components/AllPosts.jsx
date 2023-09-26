@@ -25,7 +25,7 @@ const displayedPosts = searchParams ? posts.filter((post) => post.title.toLowerC
 
 return (
   <>
-  <div>
+  <div className="search">
     <label>
       <input type="text" 
       placeholder="search for posts"
@@ -37,7 +37,8 @@ return (
   {displayedPosts.map((post) => {
   return (
     <>
-    <PostListName post={post} key={post.id} />
+    <PostListName post={post} key={post.id} id="post-card" />
+
     </>
 
   )

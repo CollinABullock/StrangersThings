@@ -1,5 +1,4 @@
 import React from "react";
-import "./Register.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -66,7 +65,7 @@ function Register(props) {
                             setUsername(e.target.value);
                         }}
                     />
-                </label>
+                </label><br />
 
                 <label className="labels">Password:
                     <input
@@ -77,7 +76,8 @@ function Register(props) {
                             setPassword(e.target.value);
                         }}
                     />
-                </label>
+                </label><br />
+                
                 <button id="registerbutton"type="submit">Submit</button>
 
             </form>

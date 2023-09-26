@@ -5,11 +5,12 @@ export default function CreateNewPost( { posts, setPosts } ) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setprice] = useState("");
+  const [location, setLocation] = useState("");
   const [error, setError] = useState(null);
 
   async function handleSubmit(p) {
     p.preventDefault();
-    const apiData = await CreatePost(title, description, price, location, willDeliver);
+    const apiData = await CreatePost(title, description, price, location);
     if (apiData.success) {
       console.log("New Post", apiData.data.newPost);
     
@@ -19,7 +20,6 @@ export default function CreateNewPost( { posts, setPosts } ) {
       setDescription("");
       setprice("");
       setLocation("");
-      setwillDeliver("");
     } else {
       setError(apiData.error.message);
     }
@@ -58,14 +58,7 @@ export default function CreateNewPost( { posts, setPosts } ) {
       placeholder="What's the address"
       onChange={(p) => setLocation(p.target.value)}
       /><br />
-         <p>Will You Deliver It?</p>
-         <input 
-      value={willDeliver}
-      type="checkbox"
-      name="Will Deliver"
-      onChange={(p) => setwillDeliver(p.target.value)}
-      /><br />
-      <button>Submit</button>
+      <button id="createNewPost" type="submit">Submit</button>
     </form>
     </>
   );
