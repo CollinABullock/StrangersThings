@@ -3,6 +3,8 @@ import Login from "./components/Login";
 import { Routes, Route, } from "react-router-dom";
 import Register from "./components/Register"
 import NavBar from "./components/NavBar";
+import AllPosts from './components/AllPosts';
+import CreateNewPost from './components/newPostForm';
 
 
 
@@ -41,12 +43,9 @@ function App() {
 
     <div>
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-=======
     <>
 
     </>
-  )
-}
 
     <Routes>
    ?
@@ -79,10 +78,28 @@ function App() {
           />
         }
       />
-      <Route
-        path="/profile"
-        element={<Profile/>}
+
+<Route
+        path="/allposts"
+        element={
+          <AllPosts
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
       />
+
+<Route
+        path="/createpost"
+        element={
+          <CreateNewPost
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
+      />
+   
+
     </Routes>
   </div>
 );

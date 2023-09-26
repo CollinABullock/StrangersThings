@@ -14,21 +14,41 @@ export default async function FetchAllPosts() {
   }
 }
 
-export async function CreatePost(title, description, price) {
+export async function CreatePost(props) {
   try {
-    const response = await fetch(`${API}/${COHORT}/posts`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        title, description, price, location
-      })
-    });
-    const result = await response.json();
-    return result;
+      if(props.isLoggedIn) {
+          const token = localStorage.getItem("token");
+          const response = await fetch(`${API}/${COHORT}/posts`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  'Authorization': `Bearer ${token}`
+              },
+              body: JSON.stringify({
+                  post: {
+                     title: title,
+                     description: description,
+                     price: price,
+                     location: location
+                  }
+              })
+          });  // Outside of fetch starting here.
+          const result = await response.json()
+          console.log(result, props.items)
+          const itemsCopy = [...props.items]
+          itemsCopy.push(result.data.post)
+          props.setItems(itemsCopy)
+
+          setTitle("")
+          setDescription("")
+          setPrice("")
+          setLocation("")
+
+          console.log(result)
+          return result;
+      }
   } catch (error) {
-    console.error(error);
+      console.log(error)
   }
 }
 

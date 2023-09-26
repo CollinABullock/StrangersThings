@@ -16,6 +16,10 @@ nav {
   align-items: center;
 }
 
+form {
+  padding: 20px;;
+}
+
 nav:hover {
   background-color: red;
 }
@@ -23,4 +27,49 @@ nav:hover {
 .search {
   margin-top: 20px;
 }
+
+#loginform{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-card {
+  padding: 20px;
+}
+
+#loginheader{
+  font-size: 3rem;
+  font-family: "edo";
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: 0.25rem;
+}
+
+.labels{
+  font-family: "edo";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+button{
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: rgb(46, 46, 46);
+  color: rgb(247, 242, 242);
+  letter-spacing: 0.1rem;
+}
+
+
 

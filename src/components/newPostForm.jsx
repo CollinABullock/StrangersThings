@@ -11,6 +11,7 @@ export default function CreateNewPost( { posts, setPosts } ) {
   async function handleSubmit(p) {
     p.preventDefault();
     const apiData = await CreatePost(title, description, price, location);
+    console.log(apiData);
     if (apiData.success) {
       console.log("New Post", apiData.data.newPost);
     
