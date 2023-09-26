@@ -1,9 +1,12 @@
 
 import { useState, useEffect } from 'react'
 import Login from "./components/Login";
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route, BrowserRouter, } from "react-router-dom";
 import Register from "./components/Register"
 import NavBar from "./components/NavBar";
+import { useNavigate } from "react-router-dom"
+import AllPosts from './components/AllPosts';
+import CreateNewPost from './components/newPostForm';
 import './App.css'
 
 function App() {
@@ -38,15 +41,9 @@ function App() {
 
     <div>
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-=======
-    <>
 
-    </>
-  )
-}
 
     <Routes>
-   ?
       <Route
         path="/login"
         element={
@@ -56,6 +53,7 @@ function App() {
           />
         }
       />
+
       <Route
         path="/register"
         element={
@@ -65,11 +63,35 @@ function App() {
           />
         }
       />
+
+      <Route
+      path='/AllPosts'
+      element={
+        <AllPosts
+        setLoggedInUser={setLoggedInUser}
+        setIsLoggedIn={setIsLoggedIn}
+        />
+      }
+      />
+
+      <Route
+      path="/CreateNewPost"
+      element={
+        <CreateNewPost
+        setLoggedInUser={setLoggedInUser}
+        setIsLoggedIn={setIsLoggedIn}
+        />
+      }
+      />
+
       {/* <Route
         path="/create-post"
         element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
       /> */}
+
+
     </Routes>
+
   </div>
 );
 }
