@@ -43,3 +43,14 @@ export async function deletePost(id) {
       console.error(error);
   }
 }
+
+export async function fetchSinglePost(id) {
+  try {
+    const response = await fetch(`${API}/${COHORT}/posts/${id}`);
+    const result = await response.json();
+    console.log(result);
+    return result
+  } catch (error) {
+    console.error();
+  }
+}
