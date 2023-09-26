@@ -95,6 +95,8 @@ function App() {
   </div>
 );
 }
+
+<img src="/home/collinabullock/Coursework/Block30/StrangersThings/PICS/STRANGERSTHINGS.jpg" alt="STRANGER'S THINGS" />
   
   
 export default App

@@ -38,7 +38,7 @@ return (
   return (
     <>
     <PostListName post={post} key={post.id} id="post-card" />
-    <button>See More Details</button>
+
     </>
 
   )
