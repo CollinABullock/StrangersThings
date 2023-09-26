@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import "./NavBar.css"
+import AllPosts from "./AllPosts";
 
 function NavBar(props) {
   let navigate = useNavigate();
@@ -31,6 +32,9 @@ function NavBar(props) {
           </Link>
           <Link className="links" to="/register">
             Register
+          </Link>
+          <Link className="posts" to ="">
+           Posts
           </Link>
         </>
       )}
