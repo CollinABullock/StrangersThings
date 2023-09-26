@@ -1,15 +1,19 @@
 import React from "react";
-import {UseState} from "react"
+import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Login(props) {
-    const[username, setUserName] = useSate("");
+    
+    const[username, setUserName] = useState("");
     const[password, setPassword] = useState("");
     const navigate = useNavigate()
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+    // const [token, setToken] = useState('');
 
     const handleSumbit = async (e) => {
         e.preventDefault();
@@ -60,7 +64,7 @@ function Login(props) {
                     value={username}
                     onChange={(e) => {
                        console.log(e.target.value)
-                       setPassword(e.target.value)
+                       setUserName(e.target.value)
                     }}
                     />
                 </label>
@@ -83,3 +87,4 @@ function Login(props) {
 }
 
 export default Login;
+
