@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { deletePost } from './/api'
-import { API } from "./FetchAllPosts"
-// ^Still need a deletePost function in /api
+import { deletePost } from './FetchAllPosts';
 
 export default function SinglePost({post}) {
     const navigate = useNavigate();

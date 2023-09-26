@@ -31,3 +31,15 @@ export async function CreatePost(title, description, price) {
     console.error(error);
   }
 }
+
+export async function deletePost(id) {
+  try {
+      const response = await fetch (`${API}/${COHORT}/posts/${id}`, {
+          method: "DELETE"
+      });
+      const result = await response.json();
+      return result;
+  } catch (error) {
+      console.error(error);
+  }
+}
