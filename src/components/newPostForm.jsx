@@ -19,7 +19,6 @@ export default function CreateNewPost( { posts, setPosts } ) {
       setDescription("");
       setprice("");
       setLocation("");
-      setwillDeliver("");
     } else {
       setError(apiData.error.message);
     }
@@ -52,18 +51,11 @@ export default function CreateNewPost( { posts, setPosts } ) {
       onChange={(p) => setprice(p.target.value)}
       /><br />
          <input 
-      value={location}
+      value={Text}
       type="text" 
       name="location"
       placeholder="What's the address"
       onChange={(p) => setLocation(p.target.value)}
-      /><br />
-         <p>Will You Deliver It?</p>
-         <input 
-      value={willDeliver}
-      type="checkbox"
-      name="Will Deliver"
-      onChange={(p) => setwillDeliver(p.target.value)}
       /><br />
       <button>Submit</button>
     </form>
