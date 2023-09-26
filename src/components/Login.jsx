@@ -1,7 +1,6 @@
 import React from "react";
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
-import "./Login.css"
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -63,7 +62,7 @@ function Login(props) {
                        setPassword(e.target.value)
                     }}
                     />
-                </label>
+                </label> <br />
                 <label className="labels">
           Password:
           <input
@@ -74,7 +73,7 @@ function Login(props) {
               setPassword(e.target.value);
             }}
           />
-        </label>
+        </label> <br />
 
                 <button id="loginbutton" type="sumbit">submit</button>
             </form>

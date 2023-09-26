@@ -38,10 +38,10 @@ function App() {
     fetchData();
   }, []);
   return (
-
     <div>
+    <div className='NavBar'>
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-
+    </div>
 
     <Routes>
       <Route

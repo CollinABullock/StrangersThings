@@ -9,3 +9,18 @@
   text-shadow: 6px 6px 6px red;
 }
 
+nav {
+  display: flex;
+  font-size: 2em;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav:hover {
+  background-color: red;
+}
+
+.search {
+  margin-top: 20px;
+}
+

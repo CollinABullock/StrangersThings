@@ -25,7 +25,7 @@ const displayedPosts = searchParams ? posts.filter((post) => post.title.toLowerC
 
 return (
   <>
-  <div>
+  <div className="search">
     <label>
       <input type="text" 
       placeholder="search for posts"
