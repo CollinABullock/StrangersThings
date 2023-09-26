@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { deletePost } from './FetchAllPosts';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchSinglePost } from './FetchAllPosts';
 
 export default function SinglePost() {
@@ -48,7 +48,8 @@ export default function SinglePost() {
                     <p>Location: {post && post.location}</p>
                 </figcaption>
             </figure>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleDelete}>Delete</button><br />
+            <button onClick={goBack}>Go Back</button>
         </div>
     )
 }

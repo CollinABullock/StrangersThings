@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import { useNavigate } from "react-router-dom"
 import AllPosts from './components/AllPosts';
 import CreateNewPost from './components/newPostForm';
+import SinglePost from './components/SinglePost';
 import './App.css'
 
 function App() {
@@ -53,6 +54,11 @@ function App() {
           />
         }
       />
+
+<Route 
+path="/:id" 
+element={<SinglePost />
+} />
 
       <Route
         path="/register"
