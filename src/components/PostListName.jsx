@@ -1,9 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { deletePost } from "./FetchAllPosts";
 
+async function handleDelete() {
+    try {
+        const result = await deletePost(post._id);
+        console.log(result);
+        navigate("/");
+    } catch(error){
+        console.log(error);
+    }
+}
+
+
+
 export default function PostListName({post}) {
-
-
   return (
     <div className="post-card">
         <figure>
