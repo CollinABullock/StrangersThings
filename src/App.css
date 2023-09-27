@@ -53,6 +53,10 @@ nav:hover {
   font-family: og-st;
 }
 
+.links a{
+  text-decoration: none;
+}
+
 *{
   background-color: black;
 }
@@ -125,4 +129,6 @@ button{
 }
 
 
-
+.post-card{
+  color: red;
+}

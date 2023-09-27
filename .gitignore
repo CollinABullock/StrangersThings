@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+App.jsx
+Profile.css
+NavBar.jsx
+read.md 
+read2.md 
+Login.css
