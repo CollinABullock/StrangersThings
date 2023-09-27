@@ -28,31 +28,31 @@ export default function CreateNewPost( { posts, setPosts } ) {
 
   return (
     <>
-    <h1>Post Your Own Stuff!</h1>
+    <h1 id="form-header">Post Your Own Stuff!</h1>
     <form onSubmit={handleSubmit}>
       {error && <p>{error}</p>}
-    <input 
+    <input className="inputs"
       value={title}
       type="text"
       name="title"
       placeholder="What are you selling?"
       onChange={(p) => setTitle(p.target.value)}
       /><br />
-      <input 
+      <input className="inputs"
       value={description}
       type="text" 
       name="description"
       placeholder="Describe what you're selling"
       onChange={(p) => setDescription(p.target.value)}
       /><br />
-      <input 
+      <input className="inputs"
       value={price}
       type="number" 
       name="price"
       placeholder="How much do you want for it?"
       onChange={(p) => setprice(p.target.value)}
       /><br />
-         <input 
+         <input className="inputs"
       value={location}
       type="text" 
       name="location"

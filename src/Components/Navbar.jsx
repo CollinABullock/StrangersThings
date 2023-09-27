@@ -9,7 +9,7 @@ function NavBar(props) {
         <>
          
           <Link className="links" to="/">Posts</Link>
-          <Link className="links" to="/Profile">My Profile</Link>
+          <Link className="links" to="/profile">My Profile</Link>
           <Link className="links" to="/createpost">Create Post</Link>
           <Link className="links" to="/allposts">See what's for Sale!</Link>
           <button id="logout-button"
@@ -32,9 +32,9 @@ function NavBar(props) {
           <Link className="links" to="/register">
             Register
           </Link>
-          {/* <Link className="links" to="/profile">
+          <Link className="links" to="/profile">
         profile
-          </Link> */}
+          </Link>
         </>
       )}
     </nav>

@@ -117,6 +117,16 @@ function App() {
             setIsLoggedIn={setIsLoggedIn}
   />}
 />
+
+<Route
+        path="/profile"
+        element={
+          <CreateNewPost
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
+      />
    
 
     </Routes>
