@@ -3,40 +3,126 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /* font-family: og-st-font; */
+  font-family: "Edo";
+  background: black;
+  color: whitesmoke;
+  text-shadow: 6px 6px 6px red;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+nav {
+  display: flex;
+  font-size: 2em;
+  justify-content: space-around;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  padding: 20px;;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+nav:hover {
+  background-color: red;
 }
 
-.card {
+.search {
+  margin-top: 20px;
+  color: aliceblue;
+}
+
+#navbar {
   padding: 2em;
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  background-color: black;
+  color: aliceblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
 }
 
-.read-the-docs {
-  color: #888;
+#navbar a {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: red;
+  text-decoration: none;
+  font-family: og-st;
 }
+
+*{
+  background-color: black;
+}
+
+.font-face-gm {
+  font-family: "og-st";
+}
+
+.labels{
+  color: red;
+}
+
+.login-container{
+  color: red;
+}
+
+.inputs{
+  color: aliceblue;
+}
+
+#form-header{
+  color: red;
+}
+
+#loginform{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginbutton{
+  color: red;
+}
+
+#post-card {
+  padding: 20px;
+}
+
+#loginheader{
+  font-size: 3rem;
+  font-family: "edo";
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: 0.25rem;
+}
+
+.labels{
+  font-family: "edo";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+button{
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: rgb(46, 46, 46);
+  color: rgb(247, 242, 242);
+  letter-spacing: 0.1rem;
+}
+
+
+
