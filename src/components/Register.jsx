@@ -11,14 +11,16 @@ function Register(props) {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-
+    // submit function passed in OnSubmit in form below.
     const handleSubmit = async(e) => {
         e.preventDefault()
         console.log(username, password)
         try {
-            const userData = await registerUser(); 
+            const result = await registerUser(); // Passing our async function in from below.
+            console.log(result.data)
 
-            localStorage.setItem("token", userData.data.token) 
+            localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
+            props.setIsLoggedIn(true)  // Telling program login is true.
 
             navigate('/')
         } catch (error) {
@@ -41,9 +43,9 @@ function Register(props) {
                        
                     }
                 })
-            }); 
-            const userData = await response.json()
-            return userData;
+            });  // Outside of fetch starting here.
+            const result = await response.json()
+            return result;
         } catch (error) {
             console.log(error)
         }

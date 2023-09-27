@@ -1,16 +1,19 @@
-
 import { useState, useEffect } from 'react'
 import Login from "./components/Login";
-import { Routes, Route, BrowserRouter, } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import Register from "./components/Register"
-import NavBar from './Components/Navbar';
-import { useNavigate } from "react-router-dom"
+import NavBar from "./components/NavBar";
 import AllPosts from './components/AllPosts';
 import CreateNewPost from './components/newPostForm';
-import './App.css'
+import SinglePost from './components/SinglePost';
 
+
+
+import './App.css'
+const COHORT_NAME = "2306-FTB-ET-WEB-AM";
+const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 function App() {
- 
+  const [token, setToken] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState("");
  
@@ -27,8 +30,8 @@ function App() {
     async function fetchData() {
       try {
         const response = await fetch(BASE_URL);
-        const result = await response.json();
-        console.log(result);
+        const userData= await response.json();
+        console.log(userData);
 
         setItems(userData.data.posts);
       } catch (error) {
@@ -38,10 +41,12 @@ function App() {
     fetchData();
   }, []);
   return (
+
     <div>
-    <div className='NavBar'>
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-    </div>
+    <>
+
+    </>
 
 <br />
 <br />
@@ -53,16 +58,27 @@ function App() {
 <br />
 
     <Routes>
+   ?
       <Route
-        path="/login"
+        path="/"
         element={
           <Login
+          
             setLoggedInUser={setLoggedInUser}
             setIsLoggedIn={setIsLoggedIn}
           />
         }
       />
-
+      <Route
+        path="/login"
+        element={
+          <Login
+          
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
+      />
       <Route
         path="/register"
         element={
@@ -73,39 +89,39 @@ function App() {
         }
       />
 
-      <Route
-      path='/AllPosts'
-      element={
-        <AllPosts
-        setLoggedInUser={setLoggedInUser}
-        setIsLoggedIn={setIsLoggedIn}
-        />
-      }
+<Route
+        path="/allposts"
+        element={
+          <AllPosts
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
       />
 
-      <Route
-      path="/CreateNewPost"
-      element={
-        <CreateNewPost
-        setLoggedInUser={setLoggedInUser}
-        setIsLoggedIn={setIsLoggedIn}
-        />
-      }
+<Route
+        path="/createpost"
+        element={
+          <CreateNewPost
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
       />
 
-      {/* <Route
-        path="/create-post"
-        element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
-      /> */}
-
+<Route 
+  path="/:_id" 
+  element={<SinglePost 
+    setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+  />}
+/>
+   
 
     </Routes>
-
   </div>
 );
 }
-
-<img src="/home/collinabullock/Coursework/Block30/StrangersThings/PICS/STRANGERSTHINGS.jpg" alt="STRANGER'S THINGS" />
   
   
 export default App

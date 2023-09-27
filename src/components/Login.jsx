@@ -2,13 +2,17 @@ import React from "react";
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 
+
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Login(props) {
+    
     const[username, setUserName] = useState("");
     const[password, setPassword] = useState("");
     const navigate = useNavigate()
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+    // const [token, setToken] = useState('');
 
     const handleSumbit = async (e) => {
         e.preventDefault();
@@ -62,7 +66,7 @@ function Login(props) {
                        setUserName(e.target.value)
                     }}
                     />
-                </label> <br />
+                </label>
                 <label className="labels">
           Password:
           <input className="inputs"
@@ -73,7 +77,7 @@ function Login(props) {
               setPassword(e.target.value);
             }}
           />
-        </label> <br />
+        </label>
 
                 <button id="loginbutton" type="sumbit">submit</button>
             </form>
@@ -82,3 +86,4 @@ function Login(props) {
 }
 
 export default Login;
+
