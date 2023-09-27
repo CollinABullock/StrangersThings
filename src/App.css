@@ -3,11 +3,13 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /* font-family: og-st-font; */
   font-family: "Edo";
-  background-color: black;
+  background: black;
   color: whitesmoke;
   text-shadow: 6px 6px 6px red;
 }
+
 
 nav {
   display: flex;
@@ -26,6 +28,53 @@ nav:hover {
 
 .search {
   margin-top: 20px;
+  color: aliceblue;
+}
+
+#navbar {
+  padding: 2em;
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  background-color: black;
+  color: aliceblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+#navbar a {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: red;
+  text-decoration: none;
+  font-family: og-st;
+}
+
+*{
+  background-color: black;
+}
+
+.font-face-gm {
+  font-family: "og-st";
+}
+
+.labels{
+  color: red;
+}
+
+.login-container{
+  color: red;
+}
+
+.inputs{
+  color: aliceblue;
+}
+
+#form-header{
+  color: red;
 }
 
 #loginform{
@@ -33,6 +82,10 @@ nav:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#loginbutton{
+  color: red;
 }
 
 #post-card {
