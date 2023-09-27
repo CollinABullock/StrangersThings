@@ -1,13 +1,13 @@
 import React from "react";
 // import { ReactDOM } from "react";
 
-function DeleteButton(props){
-    return(
-        <button onClick={props.onDelete}>F*ck outta here!</button>
-    );
-}
+// function DeleteButton(props){
+//     return(
+//         <button onClick={props.onDelete}>F*ck outta here!</button>
+//     );
+// }
 
-export default DeleteButton;
+// export default DeleteButton;
 
 
 //  This will be the code for implementing the Deletebutton in a
@@ -54,6 +54,7 @@ const MoreDetails = () => {
     </div>
   );
 };
+}
 
 export default MoreDetails;
 
