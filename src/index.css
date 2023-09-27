@@ -1,0 +1,12 @@
+*{
+    background: black;
+    background-color: black;
+}
+
+
+@font-face {
+    font-family: 'og-st';
+    src: local('og-st'),
+    url(./assets/Fonts/StangerThings/OG-bold.otf)
+    format('otf');
+}

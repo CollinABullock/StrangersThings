@@ -43,6 +43,15 @@ function App() {
     <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
     </div>
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
     <Routes>
       <Route
         path="/login"

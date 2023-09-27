@@ -25,6 +25,7 @@ function NavBar(props) {
           {/* <Link className="links" to="/">
             Posts
           </Link> */}
+          <div id="navbar" className="font-face-gm">
           <Link className="links" to="/login">
             Login
           </Link>
@@ -37,6 +38,7 @@ function NavBar(props) {
           <Link className="createpost" to ="/CreateNewPost">
            Sell Something!
           </Link>
+          </div>
         </>
       )}
     </nav>
