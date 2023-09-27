@@ -23,35 +23,18 @@ function NavBar(props) {
       ) : (
         <>
           {/* // These links are showed when the user is logged out. */}
-<<<<<<< HEAD
-          {/* <Link className="links" to="/">
-            Posts
-          </Link> */}
-          <div id="navbar" className="font-face-gm">
-=======
           <Link className="links" to="/">
            home
           </Link>
->>>>>>> 2ec82f73d419d5a1f7e1dcc51fe5b19aa298f564
           <Link className="links" to="/login">
             Login
           </Link>
           <Link className="links" to="/register">
             Register
           </Link>
-<<<<<<< HEAD
-          <Link className="posts" to ="/AllPosts">
-         What's for sale?
-          </Link>
-          <Link className="createpost" to ="/CreateNewPost">
-           Sell Something!
-          </Link>
-          </div>
-=======
           {/* <Link className="links" to="/profile">
         profile
           </Link> */}
->>>>>>> 2ec82f73d419d5a1f7e1dcc51fe5b19aa298f564
         </>
       )}
     </nav>
