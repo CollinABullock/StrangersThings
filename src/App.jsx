@@ -5,6 +5,7 @@ import Register from "./components/Register"
 import NavBar from "./components/NavBar";
 import AllPosts from './components/AllPosts';
 import CreateNewPost from './components/newPostForm';
+import SinglePost from './components/SinglePost';
 
 
 
@@ -98,6 +99,14 @@ function App() {
           />
         }
       />
+
+<Route 
+  path="/:_id" 
+  element={<SinglePost 
+    setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+  />}
+/>
    
 
     </Routes>

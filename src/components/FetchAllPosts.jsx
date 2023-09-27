@@ -52,9 +52,9 @@ export async function CreatePost(props) {
   }
 }
 
-export async function deletePost(id) {
+export async function deletePost(_id) {
   try {
-      const response = await fetch (`${API}/${COHORT}/posts/${id}`, {
+      const response = await fetch (`${API}/${COHORT}/posts/${_id}`, {
           method: "DELETE"
       });
       const result = await response.json();
@@ -64,9 +64,9 @@ export async function deletePost(id) {
   }
 }
 
-export async function fetchSinglePost(id) {
+export async function fetchSinglePost(_id) {
   try {
-    const response = await fetch(`${API}/${COHORT}/posts/${id}`);
+    const response = await fetch(`${API}/${COHORT}/posts/${_id}`);
     const result = await response.json();
     console.log(result);
     return result

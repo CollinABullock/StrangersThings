@@ -6,9 +6,11 @@ import { fetchSinglePost } from './FetchAllPosts';
 
 export default function SinglePost() {
     const navigate = useNavigate();
-    const [post, setPost] =useState(null);
-    const {id} = useParams();
-    console.log(id);
+    const [error, setError] = useState (null);
+    const [post, setPost] = useState(null);
+    const {_id} = useParams();
+    console.log(_id);
+    console.log(useParams());
 
     const goBack = () => {
         navigate(-1);
@@ -16,9 +18,9 @@ export default function SinglePost() {
 
       useEffect(() => {
         async function getSinglePost() {
-          const response = await fetchSinglePost(id);
+          const response = await fetchSinglePost(_id);
           if (response.success) {
-            setPlayer(response.data.post)
+            setPost(response.data.post)
           } else { 
             setError(response.error.message)
           }
@@ -28,7 +30,7 @@ export default function SinglePost() {
 
     async function handleDelete() {
         try {
-            const result = await deletePost(post.id);
+            const result = await deletePost(post._id);
             console.log(result);
             navigate("/");
         } catch(error){
@@ -41,7 +43,7 @@ export default function SinglePost() {
         <div>
             <figure>
                 <figcaption>
-                    <p>{post && post.name}</p>
+                    <p>{post && post.title}</p>
                     <p>{post && post.description}</p>
                     <p>Price: {post && post.price}</p>
                     <p>Seller: {post && post.username}</p>
