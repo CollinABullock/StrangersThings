@@ -15,6 +15,7 @@ export default function PostListName({post}) {
                 <p>Location: {post && post.location}</p>
             </figcaption>
         </figure>
+        <button onClick={handleDelete}>Delete</button><br />
     </div>
 )
 }
