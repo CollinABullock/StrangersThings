@@ -4,11 +4,11 @@ import { useState } from "react";
 
 
 
-async function handleDelete() {
+async function handleDelete(post) {
     try {
         const result = await deletePost(post._id);
         console.log(result);
-        navigate("/");
+        // navigate("/");
     } catch(error){
         console.log(error);
     }
