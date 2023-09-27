@@ -27,7 +27,7 @@ return (
   <>
   <div className="search">
     <label>
-      <input type="text" 
+      <input className="inputs" type="text" 
       placeholder="search for posts"
       onChange={(e) => setSearchParams (e.target.value.toLowerCase())}
       />

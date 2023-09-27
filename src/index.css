@@ -4,6 +4,18 @@
 }
 
 
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    /* font-family: og-st-font; */
+    /* font-family: "Edo"; */
+    background: black;
+    /* color: whitesmoke; */
+    text-shadow: 6px 6px 6px red;
+}
+
 @font-face {
     font-family: 'og-st';
     src: local('og-st'),

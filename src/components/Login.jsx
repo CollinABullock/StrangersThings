@@ -50,22 +50,22 @@ function Login(props) {
 
     return(
         <div id="login-container">
-            <h1 id="loginheader">login</h1>
+            <h1 id="form-header">login</h1>
             <form id="loginform" onSubmit={handleSumbit}>
                 <label className="labels">
                     Username:
-                    <input
+                    <input className="inputs"
                     type="text"
                     value={username}
                     onChange={(e) => {
                        console.log(e.target.value)
-                       setPassword(e.target.value)
+                       setUserName(e.target.value)
                     }}
                     />
                 </label> <br />
                 <label className="labels">
           Password:
-          <input
+          <input className="inputs"
             type="password"
             value={password}
             onChange={(e) => {
