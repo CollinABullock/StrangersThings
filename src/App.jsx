@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react'
-import Login from "./components/Login";
-import { Routes, Route, } from "react-router-dom";
-import Register from "./components/Register"
-import NavBar from "./components/NavBar";
-import AllPosts from './components/AllPosts';
-import CreateNewPost from './components/newPostForm';
-import SinglePost from './components/SinglePost';
+import { useState, useEffect } from 'react';
+import Login from './Components/Login';
+import NavBar from './Components/NavBar';
+
+
 
 
 
