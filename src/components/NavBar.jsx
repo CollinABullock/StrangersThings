@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
+// import "./NavBar.css"
 
 function NavBar(props) {
   let navigate = useNavigate();
@@ -9,9 +10,8 @@ function NavBar(props) {
         <>
          
           <Link className="links" to="/">Posts</Link>
-          <Link className="links" to="/Profile">My Profile</Link>
-          <Link className="links" to="/createpost">Create Post</Link>
-          <Link className="links" to="/allposts">See what's for Sale!</Link>
+          <Link className="links" to="/profile">My Profile</Link>
+          <Link className="links" to="/create-post">Create Post</Link>
           <button id="logout-button"
             onClick={() => {
               props.setIsLoggedIn(false);

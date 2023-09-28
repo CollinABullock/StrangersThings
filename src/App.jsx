@@ -5,7 +5,7 @@ import Register from "./components/Register"
 import NavBar from "./components/NavBar";
 import AllPosts from './components/AllPosts';
 import CreateNewPost from './components/newPostForm';
-import SinglePost from './components/SinglePost';
+// import SinglePost from './components/SinglePost';
 import Profile from './components/Profile';
 
 
