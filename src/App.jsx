@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import { Routes, Route, } from "react-router-dom";
 import Register from "./components/Register"
 import AllPosts from './components/AllPosts';
+import NavBar from './components/Navbar';
 import CreateNewPost from './components/newPostForm';
 // import SinglePost from './components/SinglePost';
 import Profile from './components/Profile';
