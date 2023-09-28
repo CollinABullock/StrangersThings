@@ -44,6 +44,10 @@ nav:hover {
   width: 100vw;
 }
 
+input {
+  color: whitesmoke;
+}
+
 #navbar a {
   display: flex;
   justify-content: space-evenly;
