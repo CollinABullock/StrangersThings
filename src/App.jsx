@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Login from './Components/Login';
-import NavBar from './Components/NavBar';
+import Login from './components/Login';
+import NavBar from './components/NavBar';
 
 
 
