@@ -11,7 +11,7 @@ const Profile = (props) => {
     // Define state variables to store user profile data and loading status.
     const [profileData, setProfileData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [messages, setMessages] = useState([]);
+    // const [messages, setMessages] = useState([]);
   
     // Replace 'yourAuthToken' with the actual bearer token obtained during authentication.
    
