@@ -107,6 +107,7 @@ input {
 
 #loginbutton{
   color: red;
+  color: black;
 }
 
 #post-card {
@@ -132,7 +133,7 @@ input {
   letter-spacing: 0.1rem;
 }
 
-.button{
+button{
   width: 8rem;
   height: 2.5rem;
   border-style: solid;
@@ -181,6 +182,10 @@ input {
     padding: 1rem;
     margin: 2rem;
     border-width: .5rem;
+
+    button {
+      color: white;
+    }
 }
 
 /* #profile-container{
