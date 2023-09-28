@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import "./Profile.css";
+import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
 
@@ -54,7 +54,7 @@ const Profile = (props) => {
     }, []);
   
     return (
-      <div>
+      <div id="profile-container">
         <h1>User Profile</h1>
         {loading ? (
           <p>Loading profile data...</p>

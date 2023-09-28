@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
-// import "./Login.css"
+
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -39,7 +39,7 @@ function Login(props) {
             headers: {
                 "Content-Type": "application/json",
             },
-            
+
             body: JSON.stringify({
                 user:{
                     username: username,
@@ -55,12 +55,14 @@ function Login(props) {
     }
 
     return(
-        <div id="login-container">
-            <h1 id="loginheader">login</h1>
+
+        <div  className="login-container">
+            <h1 id="form-header">Login</h1>
             <form id="loginform" onSubmit={handleSumbit}>
                 <label className="labels">
                     Username:
-                    <input
+                    <input className="inputs"
+
                     type="text"
                     value={username}
                     onChange={(e) => {
@@ -71,7 +73,9 @@ function Login(props) {
                 </label>
                 <label className="labels">
           Password:
-          <input
+
+          <input className="inputs"
+
             type="password"
             value={password}
             onChange={(e) => {
@@ -81,10 +85,15 @@ function Login(props) {
           />
         </label>
 
-                <button id="loginbutton" type="sumbit">submit</button>
+
+                <button className="button submit-button" id="loginbutton" type="sumbit">submit</button>
+
             </form>
         </div>
     );
 }
 
+
 export default Login;
+
+

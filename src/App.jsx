@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import Login from "./components/Login";
 import { Routes, Route, } from "react-router-dom";
@@ -7,6 +8,7 @@ import NavBar from './components/NavBar';
 import CreateNewPost from './components/newPostForm';
 // import SinglePost from './components/SinglePost';
 import Profile from './components/Profile';
+
 
 
 
