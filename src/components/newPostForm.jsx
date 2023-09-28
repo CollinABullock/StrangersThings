@@ -28,8 +28,9 @@ export default function CreateNewPost( { posts, setPosts } ) {
 
   return (
     <>
+    <div className="post-container font-face-gm">
     <h1 id="form-header">Post Your Own Stuff!</h1>
-    <form onSubmit={handleSubmit}>
+    <form id="post-form" onSubmit={handleSubmit}>
       {error && <p>{error}</p>}
     <input className="inputs"
       value={title}
@@ -59,8 +60,9 @@ export default function CreateNewPost( { posts, setPosts } ) {
       placeholder="What's the address"
       onChange={(p) => setLocation(p.target.value)}
       /><br />
-      <button id="createNewPost" type="submit">Submit</button>
+      <button className="button submit-button" id="createNewPost" type="submit">Submit</button>
     </form>
+    </div>
     </>
   );
 }

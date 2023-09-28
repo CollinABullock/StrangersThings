@@ -54,7 +54,7 @@ const Profile = (props) => {
     }, []);
   
     return (
-      <div>
+      <div id="profile-container">
         <h1>User Profile</h1>
         {loading ? (
           <p>Loading profile data...</p>
