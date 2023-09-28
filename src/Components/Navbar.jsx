@@ -11,7 +11,12 @@ function NavBar(props) {
          
           <Link className="links" to="/">Posts</Link>
           <Link className="links" to="/profile">My Profile</Link>
+<<<<<<< HEAD:src/components/NavBar.jsx
           <Link className="links" to="/create-post">Create Post</Link>
+=======
+          <Link className="links" to="/createpost">Create Post</Link>
+          <Link className="links" to="/allposts">See what's for Sale!</Link>
+>>>>>>> 4a16547cbac374ff77e05ba9615adf1fbbcec6bd:src/Components/Navbar.jsx
           <button id="logout-button"
             onClick={() => {
               props.setIsLoggedIn(false);
@@ -32,9 +37,9 @@ function NavBar(props) {
           <Link className="links" to="/register">
             Register
           </Link>
-          {/* <Link className="links" to="/profile">
+          <Link className="links" to="/profile">
         profile
-          </Link> */}
+          </Link>
         </>
       )}
     </nav>

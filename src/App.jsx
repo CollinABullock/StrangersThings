@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Login from "./components/Login";
+import Login from "./Components/Login";
 import { Routes, Route, } from "react-router-dom";
 import Register from "./components/Register"
 import NavBar from "./components/NavBar";
@@ -117,6 +117,16 @@ function App() {
             setIsLoggedIn={setIsLoggedIn}
   />}
 />
+
+<Route
+        path="/profile"
+        element={
+          <CreateNewPost
+            setLoggedInUser={setLoggedInUser}
+            setIsLoggedIn={setIsLoggedIn}
+          />
+        }
+      />
    
 
     </Routes>
