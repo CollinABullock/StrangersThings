@@ -1,3 +1,7 @@
+.font-face-gm {
+  font-family: "Benguiat Bold";
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,6 +46,9 @@ nav:hover {
   top: 0;
   left: 0;
   width: 100vw;
+  border-style: double;
+  border-color: red;
+  border-width: .5rem;
 }
 
 #navbar a {
@@ -86,6 +93,12 @@ nav:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-style: double;
+  border-color: red;
+  color: red;
+  padding: 1rem;
+  margin: 2rem;
+  border-width: .5rem;
 }
 
 #loginbutton{
@@ -115,7 +128,7 @@ nav:hover {
   letter-spacing: 0.1rem;
 }
 
-button{
+.button{
   width: 8rem;
   height: 2.5rem;
   border-style: solid;
@@ -123,12 +136,49 @@ button{
   border-radius: 0.5rem;
   font-size: 1.2rem;
   font-family: edo;
-  background-color: rgb(46, 46, 46);
-  color: rgb(247, 242, 242);
+  background-color: red;
+  color: black;
   letter-spacing: 0.1rem;
+  /* margin: 1rem; */
+}
+
+.submit-button {
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: red;
+  color: black;
+  letter-spacing: 0.1rem;
+  margin: 1rem;
 }
 
 
 .post-card{
+  border-style: double;
+  border-color: red;
   color: red;
+  padding: 1rem;
+  margin: 2rem;
+  border-width: .5rem;
 }
+
+.post-h1{
+  text-decoration: underline;
+}
+
+#post-form{
+    border-style: double;
+    border-color: red;
+    color: red;
+    padding: 1rem;
+    margin: 2rem;
+    border-width: .5rem;
+}
+
+/* #profile-container{
+    background-image: url("https: //cdn.mozo.com.au/images/atwood/13989/florian-bar-hawkins-upside-down-2%202.jpg?width=1428")
+} */

@@ -78,7 +78,7 @@ function Register(props) {
                     />
                 </label><br />
                 
-                <button id="registerbutton"type="submit">Submit</button>
+                <button className="button" id="registerbutton"type="submit">Submit</button>
 
             </form>
         </div>

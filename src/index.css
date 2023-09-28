@@ -17,10 +17,10 @@
 }
 
 @font-face {
-    font-family: 'og-st';
-    src: local('og-st'),
-    url(./assets/Fonts/StangerThings/OG-bold.otf)
-    format('otf');
+    font-family: 'Benguiat Bold';
+    src: local('Benguiat Bold'),
+    url(./assets/Fonts/StangerThings/Benguiat\ Bold.ttf)
+    format('truetype');
 }
 
 /* Start of Tay's CSS */

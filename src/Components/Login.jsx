@@ -53,8 +53,8 @@ function Login(props) {
     }
 
     return(
-        <div id="login-container">
-            <h1 id="form-header">login</h1>
+        <div  className="login-container">
+            <h1 id="form-header">Login</h1>
             <form id="loginform" onSubmit={handleSumbit}>
                 <label className="labels">
                     Username:
@@ -79,7 +79,7 @@ function Login(props) {
           />
         </label>
 
-                <button id="loginbutton" type="sumbit">submit</button>
+                <button className="button submit-button" id="loginbutton" type="sumbit">submit</button>
             </form>
         </div>
     );
