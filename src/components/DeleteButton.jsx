@@ -3,7 +3,9 @@ import React from "react";
 
 function DeleteButton(props){
     return(
+
         <button className="button" onClick={props.onDelete}>F*ck outta here!</button>
+
     );
 }
 
