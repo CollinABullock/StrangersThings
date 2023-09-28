@@ -3,6 +3,7 @@ import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 
 
+
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
@@ -38,6 +39,7 @@ function Login(props) {
             headers: {
                 "Content-Type": "application/json",
             },
+
             body: JSON.stringify({
                 user:{
                     username: username,
@@ -53,12 +55,14 @@ function Login(props) {
     }
 
     return(
+
         <div  className="login-container">
             <h1 id="form-header">Login</h1>
             <form id="loginform" onSubmit={handleSumbit}>
                 <label className="labels">
                     Username:
                     <input className="inputs"
+
                     type="text"
                     value={username}
                     onChange={(e) => {
@@ -69,7 +73,9 @@ function Login(props) {
                 </label>
                 <label className="labels">
           Password:
+
           <input className="inputs"
+
             type="password"
             value={password}
             onChange={(e) => {
@@ -79,11 +85,15 @@ function Login(props) {
           />
         </label>
 
+
                 <button className="button submit-button" id="loginbutton" type="sumbit">submit</button>
+
             </form>
         </div>
     );
 }
 
+
 export default Login;
+
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Login from './components/Login';
-import NavBar from './components/NavBar';
+import Login from './Components/Login';
+import NavBar from './Components/NavBar';
 
 
 
@@ -107,8 +107,8 @@ function App() {
       />
 
 <Route 
-  path="/:_id" 
-  element={<SinglePost 
+  path="/profile"
+  element={<Profile
     setLoggedInUser={setLoggedInUser}
             setIsLoggedIn={setIsLoggedIn}
   />}

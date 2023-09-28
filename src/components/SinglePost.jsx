@@ -50,8 +50,10 @@ export default function SinglePost() {
                     <p>Location: {post && post.location}</p>
                 </figcaption>
             </figure>
+
             <button className="button" onClick={handleDelete}>Delete</button><br />
             <button className="button" onClick={goBack}>Go Back</button>
+
         </div>
     )
 }
