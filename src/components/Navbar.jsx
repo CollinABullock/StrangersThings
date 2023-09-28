@@ -5,6 +5,7 @@ import React from "react";
 function NavBar(props) {
   let navigate = useNavigate();
   return (
+    <div id="navbar">
     <nav>
       {props.isLoggedIn ? (
         <>
@@ -25,7 +26,7 @@ function NavBar(props) {
         <>
           {/* // These links are showed when the user is logged out. */}
           <Link className="links" to="/">
-           home
+           Home
           </Link>
           <Link className="links" to="/login">
             Login
@@ -37,6 +38,7 @@ function NavBar(props) {
         </>
       )}
     </nav>
+    </div>
   );
 }
 

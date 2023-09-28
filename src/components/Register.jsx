@@ -54,7 +54,7 @@ function Register(props) {
 
     return(
         <div id="register-container"> 
-            <h1 id="registerheader">REGISTER</h1>
+            <h1 style={{color:"red"}} id="registerheader">REGISTER</h1>
             <form id="registerform" onSubmit={handleSubmit}>
                 <label className="labels">Username:
                     <input

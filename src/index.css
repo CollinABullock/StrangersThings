@@ -23,9 +23,9 @@
     format('truetype');
 }
 
-/* Start of Tay's CSS */
-/* 
-#nav-container{
+
+
+/* #nav-container{
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -59,10 +59,10 @@
   color: aliceblue;
   text-decoration: none;
 
-}
+} */
 
 .h1-text{
   margin-top: 4em;
-} */
-/* End of Tay's CSS */
+}
+
 

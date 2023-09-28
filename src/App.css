@@ -61,7 +61,8 @@ input {
   background-color: black;
   color: red;
   text-decoration: none;
-  font-family: og-st;
+  padding: 25px;
+  /* font-family: og-st; */
 }
 
 .links a{
