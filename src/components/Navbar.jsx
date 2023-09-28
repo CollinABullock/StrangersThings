@@ -11,9 +11,8 @@ function NavBar(props) {
          
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/profile">My Profile</Link>
-          <Link className="links" to="/create-post">Create Post</Link>
-          <Link className="links" to="/allposts">All Posts</Link>
           <Link className="links" to="/createpost">Create Post</Link>
+          <Link className="links" to="/allposts">All Posts</Link>
           <button id="logout-button"
             onClick={() => {
               props.setIsLoggedIn(false);
