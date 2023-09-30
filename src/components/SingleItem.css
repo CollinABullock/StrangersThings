@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+.single-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtered-item {
+  font-size: 1.5rem;
+  font-family: Kanit;
+}
+
+#title {
+  font-size: 2rem;
+  font-family: Kanit;
+}
