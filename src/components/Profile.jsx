@@ -1,77 +1,61 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import "./Profile.css";
-import { useNavigate } from "react-router-dom";
-
+import "./Profile.css";
+import Delete from "./Delete";
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-const Profile = (props) => {
-    // Define state variables to store user profile data and loading status.
-    const [profileData, setProfileData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    // const [messages, setMessages] = useState([]);
-  
-    // Replace 'yourAuthToken' with the actual bearer token obtained during authentication.
-   
-  
-   useEffect(() => {
-    const fetchUserProfile = async (props) => {
+
+function Profile() {
+  const [messages, setMessages] = useState([]);
+
+
+  useEffect(() => {
+    async function userProfile() {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`${BASE_URL}/users/`, {
+        const response = await fetch(`${BASE_URL}/users/me`, {
           headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
         });
-  
-        if (response.ok) {
-          const userData = await response.json();
-          setProfileData(userData);
-          console.log(userData)
-          console.log(userData.data.messages);
-        setMessages(userData.data.messages);
+
+        // Outside of fetch starting here.
+        const result = await response.json();
+        console.log(result.data.messages);
+        setMessages(result.data.messages);
         return result;
-        } else {
-          // Handle error responses (e.g., unauthorized access).
-          console.error('Failed to fetch profile data');
-        }
       } catch (error) {
-        // Handle network errors or other exceptions.
-        console.error('Error fetching profile data:', error);
-      } finally {
-        setLoading(false);
+        console.log(error);
       }
-    };
-    fetchUserProfile()
-}, [])
-  
-    // Use the useEffect hook to fetch the profile data when the component mounts.
-    useEffect(() => {
-      fetchUserProfile();
-    }, []);
-  
-    return (
-      <div id="profile-container">
-        <h1>User Profile</h1>
-        {loading ? (
-          <p>Loading profile data...</p>
-        ) : profileData ? (
-          <div>
-            <p>Name: {profileData.name}</p>
-            <p>Email: {profileData.email}</p>
-            {/* Display other profile information as needed */}
-          </div>
+    }
+    userProfile();
+  }, []);
+
+  return (
+    <div className="message-container">
+      <div className="profileTag">
+        <h1>Profile</h1>
+      </div>
+      <div id="messageBox">
+        <p></p>
+        <h2>Messages</h2>
+        {messages.length ? (
+          messages.map((e) => {
+            return (
+              <div key={e._id} className="profileMessages">
+                {e.content}
+              </div>
+            );
+          })
         ) : (
-          <p>Unable to fetch profile data.</p>
+          <div>No Messages Found</div>
         )}
       </div>
-    );
-        
-  };
-  
-  export default Profile;
-  
-  
+    </div>
+  );
+}
+
+export default Profile;

@@ -1,0 +1,42 @@
+
+
+#message-seller-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Kanit;
+}
+
+#message-button {
+  border-radius: 1rem;
+  font-family: kanit, sans-serif;
+  border-color: rgb(240, 9, 9);
+  background-color: rgb(3, 3, 3);
+  color: rgb(253, 248, 248);
+  width: 10rem;
+  height: 4rem;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+#message-seller {
+  font-size: 2.5rem;
+  font-family: kanit, sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+textarea {
+  border: solid rgb(238, 13, 13);
+  background-color: rgba(12, 12, 12, 0.884);
+  color: rgb(243, 239, 239);
+}
