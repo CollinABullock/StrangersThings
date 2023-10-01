@@ -26,7 +26,6 @@ background-attachment: fixed;
   margin: 2rem;
   padding: 5%;
   font-family: Kanit;
- 
 }
 
 #all-Items-Container {
@@ -34,6 +33,38 @@ background-attachment: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+button{
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: red;
+  color: black;
+  letter-spacing: 0.1rem;
+  /* margin: 1rem; */
+}
+
+.submit-button {
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: red;
+  color: black;
+  letter-spacing: 0.1rem;
+  margin: 1rem;
 }
 
 
@@ -44,9 +75,22 @@ background-attachment: fixed;
 
 }
 
+
 #search{
   width: 30rem;
   height: 3rem;
+
+#post-form{
+    border-style: double;
+    border-color: red;
+    color: red;
+    padding: 1rem;
+    margin: 2rem;
+    border-width: .5rem;
+
+    button {
+      color: white;
+    }
 }
   :placeholder-shown{
     font-size: 1.5rem;

@@ -6,6 +6,7 @@ import Delete from "./Delete";
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
+
 function Profile() {
   const [messages, setMessages] = useState([]);
 
