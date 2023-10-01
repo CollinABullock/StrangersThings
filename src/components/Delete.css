@@ -1,0 +1,16 @@
+
+
+#delete-button{
+    margin-left: 5rem;
+    float: right;
+    width: 9rem;
+    height: 2.5rem;
+    border-style: solid;
+    border-color: rgb(23, 23, 23);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-family: kanit, sans-serif;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    letter-spacing: 0.1rem;
+} 
