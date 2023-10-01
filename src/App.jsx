@@ -49,6 +49,7 @@ function App() {
 
       <Routes>
         <Route path="/profile" element={<Profile />} />
+
         <Route
           path="/"
           element={
@@ -59,10 +60,12 @@ function App() {
             />
           }
         />
+
         <Route
           path="/post/:id"
           element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
         />
+
         <Route
           path="/login"
           element={
@@ -72,6 +75,7 @@ function App() {
             />
           }
         />
+
         <Route
           path="/register"
           element={
@@ -82,9 +86,15 @@ function App() {
           }
         />
         <Route
-          path="/create-post"
+          path="/createpost"
           element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
         />
+
+        <Route
+          path="/allposts"
+          element={<AllItems isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
+        />
+
       </Routes>
     </div>
   );
