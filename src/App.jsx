@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AllItems from "./components/AllItems";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
 import Register from "./components/Register";
 import SingleItem from "./components/SingleItem";
 import Login from "./components/Login";

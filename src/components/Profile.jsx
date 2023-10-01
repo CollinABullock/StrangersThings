@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./Profile.css";
+// import "./Profile.css";
 import Delete from "./Delete";
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
