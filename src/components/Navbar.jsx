@@ -5,11 +5,11 @@ import React from "react";
 function NavBar(props) {
   let navigate = useNavigate();
   return (
-    <div id="navbar">
+    <div>
     <nav>
       {props.isLoggedIn ? (
         <>
-         
+         <div id="navbar">
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/profile">My Profile</Link>
           <Link className="links" to="/createpost">Create Post</Link>
@@ -21,6 +21,7 @@ function NavBar(props) {
               navigate("/")
           }}>Logout
           </button>
+          </div>
         </>
       ) : (
         <>
