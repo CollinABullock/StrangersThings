@@ -1,132 +1,37 @@
-.font-face-gm {
-  font-family: "Benguiat Bold";
+
+body {
+  background: url("./assets/st2.jpg");
+  color: rgb(241, 238, 238);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+
+
+
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  /* font-family: og-st-font; */
-  font-family: "Edo";
-  background: black;
-  color: whitesmoke;
-  text-shadow: 6px 6px 6px red;
-}
-
-
-nav {
-  display: flex;
-  font-size: 2em;
-  justify-content: space-around;
-  align-items: center;
-}
-
-form {
-  padding: 20px;;
-}
-
-nav:hover {
-  background-color: red;
-}
-
-.search {
-  margin-top: 20px;
-  color: aliceblue;
-}
-
-#navbar {
-  padding: 2em;
-  display: flex;
-  align-items: end;
-  justify-content: space-evenly;
-  background-color: black;
-  color: aliceblue;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  border-style: double;
-  border-color: red;
-  border-width: .5rem;
-}
-
-input {
-  color: whitesmoke;
-}
-
-#navbar a {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: black;
-  color: red;
-  text-decoration: none;
-  padding: 25px;
-  /* font-family: og-st; */
-}
-
-.links a{
+.link-text {
+  color: rgb(250, 245, 245);
   text-decoration: none;
 }
 
-*{
-  background-color: black;
-}
-
-.font-face-gm {
-  font-family: "og-st";
-}
-
-.labels{
-  color: red;
-}
-
-.login-container{
-  color: red;
-}
-
-.inputs{
-  color: aliceblue;
-}
-
-#form-header{
-  color: red;
-}
-
-#loginform{
+.item-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-style: double;
-  border-color: red;
-  color: red;
-  padding: 1rem;
+  width: 20rem;
+  border: 2px solid #f00808;
+  background-color: rgba(7, 7, 7, 0.448);
+  box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
+  justify-content: center, space-evenly;
   margin: 2rem;
-  border-width: .5rem;
+  padding: 5%;
+  font-family: Kanit;
 }
 
-#loginbutton{
-  color: red;
-  color: black;
-}
-
-#post-card {
-  padding: 20px;
-}
-
-#loginheader{
-  font-size: 3rem;
-  font-family: "edo";
-  text-align: center;
-  margin-bottom: 5rem;
-  letter-spacing: 0.25rem;
-}
-
-.labels{
-  font-family: "edo";
+#all-Items-Container {
+  font-size: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
@@ -163,17 +68,17 @@ button{
 }
 
 
-.post-card{
-  border-style: double;
-  border-color: red;
-  color: red;
-  padding: 1rem;
-  margin: 2rem;
-  border-width: .5rem;
+#searchbar{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
 }
 
-.post-h1{
-  text-decoration: underline;
+
+#search {
+  width: 30rem;
+  height: 3rem;
 }
 
 #post-form{
@@ -188,7 +93,39 @@ button{
       color: white;
     }
 }
+  :placeholder-shown{
+    font-size: 1.5rem;
+    color: blue;
+  }
 
-/* #profile-container{
-    background-image: url("https: //cdn.mozo.com.au/images/atwood/13989/florian-bar-hawkins-upside-down-2%202.jpg?width=1428")
-} */
+  
+
+
+nav {
+  display: flex;
+  height: 5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgba(12, 12, 12, 0.448); */
+  font-size: 2rem;
+  /* background-image: url("/src/assets/Stranger-Things-logo.png"); */
+}
+
+#logout-button {
+  width: 6rem;
+  height: 2rem;
+  border-style: solid;
+  border-color: rgb(243, 9, 9);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: kanit, sans-serif;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+.links {
+  font-size: 2rem;
+  font-family: kanit, sans-serif;
+  color: rgb(247, 247, 247);
+}

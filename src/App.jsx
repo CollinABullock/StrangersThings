@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react'
+
+import { useState, useEffect } from "react";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import AllItems from "./components/AllItems";
+import NavBar from "./components/Navbar";
+import Register from "./components/Register";
+import SingleItem from "./components/SingleItem";
 import Login from "./components/Login";
-import { Routes, Route, } from "react-router-dom";
-import Register from "./components/Register"
-import AllPosts from './components/AllPosts';
-import NavBar from './components/Navbar';
-import CreateNewPost from './components/newPostForm';
-// import SinglePost from './components/SinglePost';
-// import Profile from './components/Profile';
+import Profile from "./components/Profile";
+import Create from "./components/Create";
 
 
-
-
-import './App.css'
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
-const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
+const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
+
 function App() {
-  const [token, setToken] = useState(null);
+  const [items, setItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState("");
  
@@ -32,108 +32,72 @@ function App() {
     async function fetchData() {
       try {
         const response = await fetch(BASE_URL);
-        const userData= await response.json();
-        console.log(userData);
+        const result = await response.json();
+        console.log(result);
 
-        setItems(userData.data.posts);
+        setItems(result.data.posts);
       } catch (error) {
         console.log(error);
       }
     }
     fetchData();
   }, []);
+
   return (
-
     <div>
-    <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-    <>
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
-    </>
+      <Routes>
+        <Route path="/profile" element={<Profile />} />
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+        <Route
+          path="/"
+          element={
+            <AllItems
+              loggedInUser={loggedInUser}
+              items={items}
+              setItems={setItems}
+            />
+          }
+        />
 
-    <Routes>
-   ?
-      <Route
-        path="/"
-        element={
-          <Login
-          
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
-      <Route
-        path="/login"
-        element={
-          <Login
-          
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
-      <Route
-        path="/register"
-        element={
-          <Register
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
+        <Route
+          path="/post/:id"
+          element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
+        />
 
-<Route
-        path="/allposts"
-        element={
-          <AllPosts
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
+        <Route
+          path="/login"
+          element={
+            <Login
+              setLoggedInUser={setLoggedInUser}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
 
-<Route
-        path="/createpost"
-        element={
-          <CreateNewPost
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
+        <Route
+          path="/register"
+          element={
+            <Register
+              setLoggedInUser={setLoggedInUser}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/createpost"
+          element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
+        />
 
-<Route 
-  path="/profile"
-  element={<Profile
-    setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-  />}
-/>
+        <Route
+          path="/allposts"
+          element={<AllItems isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
+        />
 
-<Route
-        path="/profile"
-        element={
-          <CreateNewPost
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        }
-      />
-   
-
-    </Routes>
-  </div>
-);
+      </Routes>
+    </div>
+  );
 }
-  
-  
-export default App
+
+export default App;

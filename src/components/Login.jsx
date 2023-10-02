@@ -1,81 +1,74 @@
 import React from "react";
-import {useState} from "react"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
+// import "./Login.css"
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Login(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+ 
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(username, password);
+    try {
+      const result = await loginUser(); // Passing our async function in from below.
+      console.log(result.data);
     
-    const[username, setUserName] = useState("");
-    const[password, setPassword] = useState("");
-    const navigate = useNavigate()
-    // const [isAuthenticated, setIsAuthenticated] = useState(false);
-    // const [token, setToken] = useState('');
+      localStorage.setItem("token", result.data.token); // Fetching only key-value pair for token for the login.
+      props.setIsLoggedIn(true);
+      props.setLoggedInUser(username);               // Telling program login is true.
 
-    const handleSumbit = async (e) => {
-        e.preventDefault();
-        console.log(username, password);
-        try {
-            const userData = await loginUser();
-            console.log(userData.data);
-
-            localStorage.setItem("token", userData.data.token);
-            props.setIsLoggedIn(true);
-            props.setIsLoggedInUser(username);
-            
-            navigate('/')
-       }catch(error){
-     console.log(error)
-       }
+      navigate('/');
+    } catch (error) {
+      console.log(error);
     }
-
-    async function loginUser(){
-        try{
-            const response = await fetch(`${BASE_URL}/users/login`, {
-            method:"POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-
-            body: JSON.stringify({
-                user:{
-                    username: username,
-                    password: password,
-                },
-            })
-            });
-            const userData = await response.json();
-            return userData;
-        }catch(error){
-            console.log(error)
-        }
+  };
+ 
+  async function loginUser() {
+    try {
+      const response = await fetch(`${BASE_URL}/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: {
+            username: username,
+            password: password,
+          },
+        }),
+      }); // Outside of fetch starting here.
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.log(error);
     }
+  }
 
-    return(
+  return (
+    <div id="login-container">
+      <h1 id="loginheader">LOGIN</h1>
+      <form id="loginform" onSubmit={handleSubmit}>
+        <label className="labels">
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => {
+              console.log(e.target.value);
+              setUsername(e.target.value);
+            }}
+          />
+        </label>
 
-        <div  className="login-container">
-            <h1 id="form-header">Login</h1>
-            <form id="loginform" onSubmit={handleSumbit}>
-                <label className="labels">
-                    Username:
-                    <input className="inputs"
-
-                    type="text"
-                    value={username}
-                    onChange={(e) => {
-                       console.log(e.target.value)
-                       setUserName(e.target.value)
-                    }}
-                    />
-                </label>
-                <label className="labels">
+        <label className="labels">
           Password:
-
-          <input className="inputs"
-
+          <input
             type="password"
             value={password}
             onChange={(e) => {
@@ -84,16 +77,10 @@ function Login(props) {
             }}
           />
         </label>
-
-
-                <button className="button submit-button" id="loginbutton" type="sumbit">submit</button>
-
-            </form>
-        </div>
-    );
+        <button id="loginbutton" type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
 
-
 export default Login;
-
-
