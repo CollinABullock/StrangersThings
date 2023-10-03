@@ -1,15 +1,16 @@
 
 
-
+/* 
 nav {
   display: flex;
   height: 5rem;
   justify-content: space-evenly;
   align-items: center;
   /* background-color: rgba(12, 12, 12, 0.448); */
-  font-size: 2rem;
+  /* font-size: 2rem; */
   /* background-image: url("/src/assets/Stranger-Things-logo.png"); */
-}
+/* } */ 
+
 
 #logout-button {
   width: 6rem;

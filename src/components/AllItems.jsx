@@ -18,6 +18,7 @@ const AllItems = (props) => {
 
   return (
     <>
+
       <form id="searchbar">
         <label htmlFor="name"></label>
         <input id="search"
