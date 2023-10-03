@@ -1,12 +1,37 @@
-@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-@media only screen and (max-width: 768px) {
-
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
+@media (min-width: 500px) and (max-width: 3000px){
+  body {
+    background: url("./assets/st2.jpg");
+    color: rgb(241, 238, 238);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  
+  
+  
+  
   }
-}
+  
+  .link-text {
+    color: rgb(250, 245, 245);
+    text-decoration: none;
+  }
+  
+  .item-container {
+    display: flex;
+    width: 20rem;
+    border: 2px solid #f00808;
+    background-color: rgba(7, 7, 7, 0.448);
+    box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
+    justify-content: center, space-evenly;
+    
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 
 body {
@@ -101,18 +126,117 @@ button{
     color: red;
     padding: 1rem;
     margin: 2rem;
-    border-width: .5rem;
+    padding: 5%;
+    font-family: Kanit;
 
-    button {
-      color: white;
+    .link-text {
+      text-align: center;
     }
-}
-  :placeholder-shown{
-    font-size: 1.5rem;
-    color: blue;
   }
-
   
+  #all-Items-Container {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  button{
+    width: 8rem;
+    height: 2.5rem;
+    border-style: solid;
+    border-color: rgb(180, 25, 25);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-family: edo;
+    background-color: red;
+    color: black;
+    letter-spacing: 0.1rem;
+    /* margin: 1rem; */
+  }
+  
+  .submit-button {
+    width: 8rem;
+    height: 2.5rem;
+    border-style: solid;
+    border-color: rgb(180, 25, 25);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-family: edo;
+    background-color: red;
+    color: black;
+    letter-spacing: 0.1rem;
+    margin: 1rem;
+  }
+  
+  
+  #searchbar{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  
+  }
+  
+  
+  #search {
+    width: 30rem;
+    height: 3rem;
+  }
+  
+  #post-form{
+      border-style: double;
+      border-color: red;
+      color: red;
+      padding: 1rem;
+      margin: 2rem;
+      border-width: .5rem;
+  
+      button {
+        color: white;
+      }
+  }
+    :placeholder-shown{
+      font-size: 1.5rem;
+      color: blue;
+    }
+  
+    
+  
+  
+  nav {
+    display: flex;
+    height: 5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: rgba(12, 12, 12, 0.448); */
+    font-size: 2rem;
+    /* background-image: url("/src/assets/Stranger-Things-logo.png"); */
+  }
+  
+  #logout-button {
+    width: 6rem;
+    height: 2rem;
+    border-style: solid;
+    border-color: rgb(243, 9, 9);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: kanit, sans-serif;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    letter-spacing: 0.1rem;
+  }
+  
+  .links {
+    font-size: 2rem;
+    font-family: kanit, sans-serif;
+    color: rgb(247, 247, 247);
+  }
+  
+
 
 
 nav {
