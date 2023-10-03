@@ -23,8 +23,8 @@
     format('truetype');
 }
 
-/* Start of Tay's CSS */
-/* 
+
+
 #nav-container{
   height: 100%;
   display: flex;
@@ -38,31 +38,10 @@
   font-size: large;
 }
 
-#navbar{
-  padding: 2em;
-  display: flex;
-  align-items: end;
-  justify-content: space-evenly;
-  background-color: black;
-  color: aliceblue;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  font-size: x-large;
-}
 
-#navbar a{
-  display: flex;
-  justify-content: space-evenly;
-  background-color: black;
-  color: aliceblue;
-  text-decoration: none;
-
-}
 
 .h1-text{
   margin-top: 4em;
-} */
-/* End of Tay's CSS */
+}
+
 

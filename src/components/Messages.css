@@ -1,3 +1,4 @@
+
 @media (min-width: 600px) and (max-width: 3000px) {
   #message-seller-container {
     display: flex;
@@ -40,3 +41,4 @@
     color: rgb(243, 239, 239);
   }
 }
+

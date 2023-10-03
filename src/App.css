@@ -1,3 +1,4 @@
+
 @media (min-width: 500px) and (max-width: 3000px){
   body {
     background: url("./assets/st2.jpg");
@@ -29,6 +30,101 @@
     background-color: rgba(7, 7, 7, 0.448);
     box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
     justify-content: center, space-evenly;
+    
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+
+body {
+background: url("./assets/st2.jpg");
+color: rgb(241, 238, 238);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+.link-text {
+  color: rgb(250, 245, 245);
+  text-decoration: none;
+}
+
+.item-container {
+  display: flex;
+  width: 20rem;
+  border: 2px solid #f00808;
+  background-color: rgba(7, 7, 7, 0.448);
+  box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
+  justify-content: center, space-evenly;
+  margin: 2rem;
+  padding: 5%;
+  font-family: Kanit;
+}
+
+#all-Items-Container {
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+button{
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: edo;
+  background-color: red;
+  color: black;
+  letter-spacing: 0.1rem;
+  /* margin: 1rem; */
+}
+
+.submit-button {
+  width: 8rem;
+  height: 2.5rem;
+  border-style: solid;
+  border-color: rgb(180, 25, 25);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: kanit,
+    sans-serif;
+  background-color: red;
+  color: black;
+  letter-spacing: 0.1rem;
+  margin: 1rem;
+}
+
+
+#searchbar{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-top: 5rem;
+
+}
+
+
+#search {
+  width: 30rem;
+  height: 3rem;
+  background-color: black;
+  color: #f00808;
+  font-family: kanit,
+    sans-serif;
+  font-size: x-large;
+
+}
+
+#post-form{
+    border-style: double;
+    border-color: red;
+    color: red;
+    padding: 1rem;
     margin: 2rem;
     padding: 5%;
     font-family: Kanit;
@@ -140,4 +236,198 @@
     color: rgb(247, 247, 247);
   }
   
+
+
+
+nav {
+  display: flex;
+  height: 5rem;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: rgba(12, 12, 12, 0.448); */
+  font-size: 2rem;
+  /* background-image: url("/src/assets/Stranger-Things-logo.png"); */
+}
+
+#logout-button {
+  width: 6rem;
+  height: 2.7rem;
+  border-style: double;
+  border-width: .25rem;
+  border-color: #f00808;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: kanit, sans-serif;
+  background-color: black;
+  color: white;
+  letter-spacing: 0.2rem;
+  color: #f00808;
+}
+
+.links {
+  font-size: 2rem;
+  font-family: kanit, sans-serif;
+  color: rgb(247, 247, 247);
+}
+
+
+#navbar{
+  padding: 2em;
+  display: flex;
+  align-items: end;
+  justify-content: space-evenly;
+  background-color: black;
+  color: aliceblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-size: x-large;
+  border-style: double;
+  border-color: #f00808;
+  border-width: .5rem;
+  /* text-decoration: underline; */
+  text-decoration-color: #f00808;
+}
+
+#navbar a{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: #f00808;
+  text-decoration: none;
+}
+
+#createpost {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem;
+}
+
+#createform {
+  /* background-color: rgba(255, 255, 255, 0.731); */
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.createlabels {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(252, 246, 246);
+  background-color: rgba(0, 0, 0, 0.533);
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 2rem;
+  padding: 1rem;
+  border: groove rgb(238, 12, 12);
+}
+
+input {
+  margin: 1rem;
+  height: 2rem;
+  width: 15rem;
+  background-color: black;
+  color: #f00808;
+  font-size: x-large;
+}
+
+#create-button {
+  font-family: Arial, Helvetica, sans-serif;
+  border: solid rgb(241, 12, 12);
+  height: 3rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  width: 29rem;
+  align-self: center;
+  background-color: black;
+  color: rgb(248, 243, 243)
+}
+
+#newpost {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.55rem;
+  color: #f00808;
+  font-family: kanit;
+
+}
+
+
+.single-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+#message-author {
+  display: flex;
+  flex-direction: column;
+  border-color: #f00808;
+  border: double;
+  border-width: .25rem;
+}
+
+.filtered-item {
+  font-size: 1.5rem;
+  font-family: Kanit;
+}
+
+#title {
+  font-size: 2rem;
+  font-family: Kanit;
+}
+
+#message-seller-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Kanit;
+}
+
+#message-button {
+  border-radius: 1rem;
+  font-family: kanit, sans-serif;
+  border-color: rgb(240, 9, 9);
+  background-color: rgb(3, 3, 3);
+  color: rgb(253, 248, 248);
+  width: 10rem;
+  height: 4rem;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+#message-seller {
+  font-size: 2.5rem;
+  font-family: kanit, sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+textarea {
+  border: solid rgb(238, 13, 13);
+  background-color: rgba(12, 12, 12, 0.884);
+  color: rgb(243, 239, 239);
+}
+
+.message-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  padding-top: 3.5rem;
+  color: #f00808;
 }

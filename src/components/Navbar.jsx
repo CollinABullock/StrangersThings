@@ -5,10 +5,11 @@ import React from "react";
 function NavBar(props) {
   let navigate = useNavigate();
   return (
+    <div>
     <nav>
       {props.isLoggedIn ? (
         <>
-         
+         <div id="navbar">
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/profile">My Profile</Link>
           <Link className="links" to="/createpost">Create Post</Link>
@@ -20,12 +21,13 @@ function NavBar(props) {
               navigate("/")
           }}>Logout
           </button>
+          </div>
         </>
       ) : (
         <>
           {/* // These links are showed when the user is logged out. */}
           <Link className="links" to="/">
-           home
+           Home
           </Link>
           <Link className="links" to="/login">
             Login
@@ -37,6 +39,7 @@ function NavBar(props) {
         </>
       )}
     </nav>
+    </div>
   );
 }
 
