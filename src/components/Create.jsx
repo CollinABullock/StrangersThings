@@ -7,7 +7,7 @@ const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 
-function Create(props) {
+export default function Create(props) {
    const [title, setTitle] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
@@ -66,9 +66,9 @@ function Create(props) {
 
                 console.log(result)
                 return result;
-        } catch (error) {
-            console.log(error)
-        }
+        } 
+    } catch (error) {
+        console.log(error)
     }
 
 
@@ -131,9 +131,4 @@ function Create(props) {
             </form>
         </div>
     )
-}
-
-
-
-
-export default Create;
+} }

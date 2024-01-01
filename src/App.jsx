@@ -9,6 +9,7 @@ import SingleItem from "./components/SingleItem";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Create from "./components/Create";
+import NavBar2 from "./components/NavBar2";
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -64,6 +65,12 @@ function App() {
         <Route
           path="/post/:id"
           element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
+        />
+
+        
+          <Route
+          path="/navbar2"
+          element={<NavBar2 items={items} isLoggedIn={isLoggedIn} />}
         />
 
         <Route

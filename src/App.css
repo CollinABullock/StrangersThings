@@ -12,11 +12,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-  
-  
-  
-  
-  }
+  } }
   
   .link-text {
     color: rgb(250, 245, 245);
@@ -29,7 +25,7 @@
     border: 2px solid #f00808;
     background-color: rgba(7, 7, 7, 0.448);
     box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
-    justify-content: center, space-evenly;
+    justify-content: center, space-evenly;}
     
 @import url(https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
