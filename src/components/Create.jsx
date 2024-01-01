@@ -66,7 +66,6 @@ function Create(props) {
 
                 console.log(result)
                 return result;
-            }
         } catch (error) {
             console.log(error)
         }

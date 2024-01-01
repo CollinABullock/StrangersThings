@@ -48,7 +48,7 @@ function Login(props) {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div id="login-container">
