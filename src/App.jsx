@@ -3,13 +3,12 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AllItems from "./components/AllItems";
-import NavBar from "./components/Navbar";
 import Register from "./components/Register";
 import SingleItem from "./components/SingleItem";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
-import Create from "./components/Create";
-import NavBar2 from "./components/NavBar2";
+import CreatePost from "./components/Create";
+import ResponsiveAppBar from "./components/NavBar2";
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -46,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <ResponsiveAppBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
       <Routes>
         <Route path="/profile" element={<Profile />} />
@@ -70,7 +69,7 @@ function App() {
         
           <Route
           path="/navbar2"
-          element={<NavBar2 items={items} isLoggedIn={isLoggedIn} />}
+          element={<ResponsiveAppBar items={items} isLoggedIn={isLoggedIn} />}
         />
 
         <Route
@@ -94,7 +93,7 @@ function App() {
         />
         <Route
           path="/createpost"
-          element={<Create isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
+          element={<CreatePost />}
         />
 
         <Route

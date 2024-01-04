@@ -7,20 +7,18 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
+import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
 
 const pages = [
   { title: "Home", url: "/", id: "1" },
-  { title: "Profile", url: "/profile", id: "2" },
   { title: "Sell Something", url: "/createpost", id: "3" },
   { title: "What's for sale?", url: "/allposts", id: "4" }
 ];
+
 
 
 function ResponsiveAppBar() {
@@ -35,7 +33,9 @@ function ResponsiveAppBar() {
     }
   }, []);
 
-  let navigate = useNavigate();
+  console.log(isLoggedIn);
+
+  // let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -52,13 +52,15 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+
+
   return (
-    <AppBar position="static" sx={{backgroundColor: "#d62828", borderRadius: "100px", margin: "10px", width: "95vw", padding: "10px"}}>
+    <AppBar position="static" sx={{backgroundColor: "white", color: "red", borderRadius: "100px", margin: "10px", width: "95vw", padding: "10px"}}>
       {isLoggedIn ? (
         <>
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
-         <img src='https://i.ibb.co/SvDwxPz/smoregearlogo.jpg' alt="log" width={100} />
+         <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo" width={100} />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', }, backgroundColor: "#780000",   color: "antiquewhite" }}>
             <IconButton
@@ -72,6 +74,7 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
             <Menu
+
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -89,62 +92,45 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+             {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
+                  <Typography textAlign="center" fontFamily><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
          
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'impact',
-              fontWeight: 700,
-              fontSize: "3rem",
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Stranger's Things
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "space-evenly", fontSize: "2em" } }}>
+         
+         
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "space-evenly", fontSize: "2em", maxWidth: "100%"} }}>
             
               <Button
-                href='/products'
+                href='/allposts'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
               >
                What's for sale?
               </Button>
               <Button
-                href='/products/create-post'
+                href="/createpost"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
               >
                Sell something!
               </Button>
               <Button
-                href='/products/shoppingcart'
+                href="/profile"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
               >
-               Shopping cart
+              View Profile
               </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0}}>
-                <Avatar alt="Remy Sharp" src="https://cdn.backpacker.com/wp-content/uploads/2023/05/womens-hiking-tops-sgg23_h.jpg" />
+          <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <img alt="LogOut" src="https://www.wetanz.com/media/catalog/product/cache/0c729873665a1c695396984e8457e603/2/5/25-50-03850_strangerthings_demogorgon_trap_002.jpg" style={{width: "100%", margin: "5px", borderRadius: "100px"}}/>
               </IconButton>
             </Tooltip>
             <Menu
@@ -165,9 +151,6 @@ function ResponsiveAppBar() {
             >
               
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">
-                  <Link className="links" to="/users/profile">My Profile</Link>
-                  </Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">
@@ -175,10 +158,6 @@ function ResponsiveAppBar() {
             onClick={() => {
               setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
-              localStorage.removeItem("user");
-              localStorage.removeItem("userName");
-              localStorage.removeItem("userID");
-              localStorage.removeItem("userEmail");
               navigate("/")
           }}>Logout
           </button>
@@ -221,14 +200,10 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+                display: { xs: 'block', md: 'none' }, fontSize: "1em"}}
             >
-              {pages.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
-                </MenuItem>
-              ))}
+      <Typography textAlign="center" fontFamily={"GoodBoy"} ><a href="/login">Log In</a></Typography>
+      <Typography textAlign="center" fontFamily={"GoodBoy"} ><a href="/register">Register</a></Typography>
             </Menu>
           </Box>
          
