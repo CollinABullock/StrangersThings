@@ -12,11 +12,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import MenuItem from '@mui/material/MenuItem';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const pages = [
   { title: "Home", url: "/", id: "1" },
   { title: "Sell Something", url: "/createpost", id: "3" },
-  { title: "What's for sale?", url: "/allposts", id: "4" }
+  { title: "What's for sale?", url: "/allposts", id: "4" },
 ];
 
 
@@ -35,7 +36,7 @@ function ResponsiveAppBar() {
 
   console.log(isLoggedIn);
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -55,14 +56,20 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar position="static" sx={{backgroundColor: "white", color: "red", borderRadius: "100px", margin: "10px", width: "95vw", padding: "10px"}}>
+    <AppBar position="static" sx={{backgroundColor: "black", borderRadius: "100px", margin: "0 auto", marginTop: "10px", width: "90%", padding: "10px"}}>
       {isLoggedIn ? (
         <>
-      <Container maxWidth="xl" >
-        <Toolbar disableGutters>
-         <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo" width={100} />
+       <Container maxWidth="50%" sx={{alignContent: "center", borderRadius: "100px"}} >
+        <Toolbar disableGutters sx={{alignItems: "center"}}>
+         <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo"    style={{
+              maxWidth: "30%",
+              height: "auto", // Maintain aspect ratio
+              borderRadius: "30px",
+              margin: "0 auto",
+              display: "block", // Ensures the image is centered properly
+            }}/>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', }, backgroundColor: "#780000",   color: "antiquewhite" }}>
+<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', maxWidth: "50%", borderRadius: "20px" }, backgroundColor: "red",   color: "antiquewhite" , justifyContent: "center"}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -89,12 +96,11 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+                display: { xs: 'block', md: 'none' }, fontSize: "1em"}}
             >
              {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" fontFamily><a href={page.url}>{page.title}</a></Typography>
+                  <Typography textAlign="center"><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -125,14 +131,20 @@ function ResponsiveAppBar() {
               >
               View Profile
               </Button>
+              <Button
+                onClick={() => {
+              setIsLoggedIn(false);
+              localStorage.clear();
+              sessionStorage.clear();
+              navigate("/")
+          }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+              >
+              Log Out
+              </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <img alt="LogOut" src="https://www.wetanz.com/media/catalog/product/cache/0c729873665a1c695396984e8457e603/2/5/25-50-03850_strangerthings_demogorgon_trap_002.jpg" style={{width: "100%", margin: "5px", borderRadius: "100px"}}/>
-              </IconButton>
-            </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -170,11 +182,17 @@ function ResponsiveAppBar() {
       </>
        ) : (
         <>
-        <Container maxWidth="xl" >
-        <Toolbar disableGutters>
-       
+       <Container maxWidth="50%" sx={{alignContent: "center", borderRadius: "100px"}} >
+        <Toolbar disableGutters sx={{alignItems: "center"}}>
+         <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo"    style={{
+              maxWidth: "30%",
+              height: "auto", // Maintain aspect ratio
+              borderRadius: "30px",
+              margin: "0 auto",
+              display: "block", // Ensures the image is centered properly
+            }}/>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', }, backgroundColor: "#780000",   color: "antiquewhite" }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', maxWidth: "50%" }, backgroundColor: "red",   color: "antiquewhite" , justifyContent: "center"}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -202,8 +220,11 @@ function ResponsiveAppBar() {
               sx={{
                 display: { xs: 'block', md: 'none' }, fontSize: "1em"}}
             >
-      <Typography textAlign="center" fontFamily={"GoodBoy"} ><a href="/login">Log In</a></Typography>
-      <Typography textAlign="center" fontFamily={"GoodBoy"} ><a href="/register">Register</a></Typography>
+          {pages.map((page) => (
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"><a href={page.url}>{page.title}</a></Typography>
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
          
@@ -212,14 +233,14 @@ function ResponsiveAppBar() {
               <Button
                 href='/login'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
               >
                Login
               </Button>
               <Button
                 href='/register'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
               >
                Register
               </Button>
