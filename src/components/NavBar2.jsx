@@ -62,7 +62,7 @@ function ResponsiveAppBar() {
        <Container maxWidth="50%" sx={{alignContent: "center", borderRadius: "100px"}} >
         <Toolbar disableGutters sx={{alignItems: "center"}}>
          <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo"    style={{
-              maxWidth: "30%",
+              maxWidth: "40%",
               height: "auto", // Maintain aspect ratio
               borderRadius: "30px",
               margin: "0 auto",
@@ -100,7 +100,7 @@ function ResponsiveAppBar() {
             >
              {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><a href={page.url}>{page.title}</a></Typography>
+                  <Typography textAlign="center" fontFamily={"ST"}><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -113,21 +113,21 @@ function ResponsiveAppBar() {
               <Button
                 href='/allposts'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".75em" }}
               >
                What's for sale?
               </Button>
               <Button
                 href="/createpost"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".75em" }}
               >
                Sell something!
               </Button>
               <Button
                 href="/profile"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".75em" }}
               >
               View Profile
               </Button>
@@ -138,7 +138,7 @@ function ResponsiveAppBar() {
               sessionStorage.clear();
               navigate("/")
           }}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".5em" }}
               >
               Log Out
               </Button>
@@ -185,7 +185,7 @@ function ResponsiveAppBar() {
        <Container maxWidth="50%" sx={{alignContent: "center", borderRadius: "100px"}} >
         <Toolbar disableGutters sx={{alignItems: "center"}}>
          <img src='https://i.ibb.co/bKKkQYd/STRANGER-S-THINGS-1-4-2024.png' alt="logo"    style={{
-              maxWidth: "30%",
+              maxWidth: "40%",
               height: "auto", // Maintain aspect ratio
               borderRadius: "30px",
               margin: "0 auto",
@@ -233,14 +233,14 @@ function ResponsiveAppBar() {
               <Button
                 href='/login'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".75em" }}
               >
                Login
               </Button>
               <Button
                 href='/register'
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "impact", fontSize: "1em" }}
+                sx={{ my: 2, color: 'red', display: 'block', fontFamily: "ST", fontSize: ".75em" }}
               >
                Register
               </Button>

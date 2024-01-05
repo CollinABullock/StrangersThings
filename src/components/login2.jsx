@@ -48,7 +48,7 @@ export default function SignIn(props) {
       console.log(result.data);
       localStorage.setItem("token", result.data.token)
 
-      navigate('/allposts');
+      navigate('/');
     } catch (error) {
       console.log(error);
     }

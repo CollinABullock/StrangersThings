@@ -17,10 +17,11 @@ function Register(props) {
         e.preventDefault()
         console.log(username, password)
         try {
-            const result = await registerUser(); // Passing our async function in from below.
+            const result = await registerUser(username, password); // Passing our async function in from below.
             console.log(result.data)
 
-            localStorage.setItem("token", result.data.token) // Storing only key-value pair for token.
+            localStorage.setItem("token", result.data.token)
+            localStorage.setItem("username", result.data.username)
             props.setIsLoggedIn(true)  // Telling program login is true.
 
             navigate('/')
@@ -41,7 +42,6 @@ function Register(props) {
                     user: {
                         username: username,
                         password: password,
-                       
                     }
                 })
             });  // Outside of fetch starting here.
