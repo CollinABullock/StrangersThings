@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import MessageModal from './MessageModal';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -26,30 +26,31 @@ function Copyright(props) {
   );
 }
 
-const COHORT_NAME = "2306-FTB-ET-WEB-AM";
+
+const COHORT_NAME = '2306-FTB-ET-WEB-AM';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-
-
 export default function SignIn(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
  
-  const navigate = useNavigate()
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, password);
     try {
-      const result = await loginUser(); // Passing our async function in from below.
-      console.log(result.data);
-      localStorage.setItem("token", result.data.token)
-
+      const result = await loginUser();
+      localStorage.setItem('token', result.data.token);
       navigate('/allposts');
     } catch (error) {
-      console.log(error);
+      console.error(error);
+
+      if (error.response && error.response.data && error.response.data.message) {
+        handleOpenMessageModal(error.response.data.message, false);
+      } else {
+        handleOpenMessageModal('An error occurred during login.', false);
+      }
     }
   };
 
@@ -143,11 +144,6 @@ export default function SignIn(props) {
               Submit
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="/register" variant="body2" sx={{fontFamily: "ST", color: "red"}}>
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/register" variant="body2" sx={{fontFamily: "ST", color: "red"}}>
                   Don't have an account? Sign Up!

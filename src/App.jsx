@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import CreatePost from "./components/Create";
 import ResponsiveAppBar from "./components/NavBar2";
+import SignUp from "./components/Register2";
+
 
 
 
@@ -65,6 +67,11 @@ function App() {
         <Route
           path="/post/:id"
           element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
+        />
+
+<Route
+          path="/register2"
+          element={<SignUp items={items} isLoggedIn={isLoggedIn} />}
         />
 
         
