@@ -9,7 +9,7 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import CreatePost from "./components/Create";
 import ResponsiveAppBar from "./components/NavBar2";
-import SignIn from "./components/login2";
+
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -83,15 +83,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/login2"
-          element={
-            <SignIn
-              setLoggedInUser={setLoggedInUser}
-              setIsLoggedIn={setIsLoggedIn}
-            />
-          }
-        />
+       
 
         <Route
           path="/register"
