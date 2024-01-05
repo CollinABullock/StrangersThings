@@ -84,11 +84,10 @@ export default function SignIn(props) {
 
   return (
     <>
-      <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%", paddingBottom: "10%"}}>
+      <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -102,10 +101,10 @@ export default function SignIn(props) {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="Username"
+              label="UserName"
+              name="Username"
+              autoComplete="Username"
               onChange={handleNameChange}
               autoFocus
               InputLabelProps={{
@@ -158,7 +157,7 @@ export default function SignIn(props) {
           </Box>
         </Box>
       </Container>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
+      <Copyright sx={{ mt: 8, mb: 4, fontFamily: "ST" }} />
       </>
   );
 }

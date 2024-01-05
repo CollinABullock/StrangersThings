@@ -45,7 +45,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div id="root">
       <ResponsiveAppBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
       <Routes>
