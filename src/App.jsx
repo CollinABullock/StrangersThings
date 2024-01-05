@@ -11,14 +11,13 @@ import CreatePost from "./components/Create";
 import ResponsiveAppBar from "./components/NavBar2";
 import SignUp from "./components/Register2";
 
-function App() {
- 
 
+
+function App() { 
   return (
     <div id="root">
-      <ResponsiveAppBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <ResponsiveAppBar />
 
-<div className="routes">
       <Routes>
         <Route path="/profile" element={<Profile />} />
 
@@ -35,26 +34,21 @@ function App() {
 
         <Route
           path="/post/:id"
-          element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
+          element={<SingleItem />}
         />
 
-<Route
-          path="/register2"
-          element={<SignUp items={items} isLoggedIn={isLoggedIn} />}
-        />
+
 
         
           <Route
           path="/navbar2"
-          element={<ResponsiveAppBar items={items} isLoggedIn={isLoggedIn} />}
+          element={<ResponsiveAppBar />}
         />
 
         <Route
           path="/login"
           element={
             <Login
-              setLoggedInUser={setLoggedInUser}
-              setIsLoggedIn={setIsLoggedIn}
             />
           }
         />
@@ -65,26 +59,21 @@ function App() {
           path="/register"
           element={
             <Register
-              setLoggedInUser={setLoggedInUser}
-              setIsLoggedIn={setIsLoggedIn}
             />
           }
         />
         <Route
           path="/createpost"
           element={<CreatePost 
-            setLoggedInUser={setLoggedInUser}
-            setIsLoggedIn={setIsLoggedIn}
           />}
         />
 
         <Route
           path="/allposts"
-          element={<AllItems isLoggedIn={isLoggedIn} items={items} setItems={setItems} />}
+          element={<AllItems />}
         />
 
       </Routes>
-      </div>
     </div>
   );
 }
