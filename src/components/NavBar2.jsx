@@ -31,8 +31,10 @@ function ResponsiveAppBar() {
     const token = localStorage.getItem("token");
     if (token) {
       setIsLoggedIn(true);
+    }else {
+      setIsLoggedIn(false);
     }
-  }, []);
+  }, [localStorage.getItem("token")]);
 
   console.log(isLoggedIn);
 

@@ -3,11 +3,20 @@ import React from "react";
 // import "./NavBar.css"
 
 function NavBar(props) {
+
   let navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div>
     <nav>
-      {props.isLoggedIn ? (
+      {isLoggedIn ? (
         <>
          <div id="navbar">
           <Link className="links" to="/">Home</Link>
@@ -16,7 +25,7 @@ function NavBar(props) {
           <Link className="links" to="/allposts">All Posts</Link>
           <button id="logout-button"
             onClick={() => {
-              props.setIsLoggedIn(false);
+              setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
               navigate("/")
           }}>Logout
