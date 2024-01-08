@@ -1,5 +1,4 @@
 import * as React from 'react';
-import MessageModal from './MessageModal';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -33,7 +32,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 export default function SignIn(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+
   const navigate = useNavigate();
  
 
