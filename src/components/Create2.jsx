@@ -8,8 +8,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 
 function Copyright(props) {
   return (
@@ -26,8 +24,8 @@ function Copyright(props) {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-export default function CreatePost() {
-  const [name, setName] = useState("");
+export default function CreatePost2() {
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
@@ -108,17 +106,17 @@ const handlePriceChange = (e) => {
           }}
         >
           <Typography component="h1" variant="h5" sx={{fontFamily: "ST", fontSize: "3em"}}>
-           Sell Your Things!
+           Sell Your Strange Things!
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
               margin="normal"
               required
               fullWidth
-              id="Username"
-              label="UserName"
-              name="Username"
-              autoComplete="Username"
+              id="title"
+              label="What are you selling?"
+              name="title"
+              autoComplete="title"
               onChange={handleTitleChange}
               autoFocus
               InputLabelProps={{
