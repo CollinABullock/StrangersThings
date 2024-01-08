@@ -26,49 +26,46 @@ function Copyright(props) {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
-
 export default function CreatePost() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
-  const userID = localStorage.getItem("userID");
-  const [selectedCategory, setSelectedCategory] = useState();
 
-  console.log(selectedCategory);
 
-  const handleSelectCategory = (selected) => {
-    setSelectedCategory(selected);
-  };
+
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const result = await createPost(name, description, price, selectedCategory);
-      navigate('/products');
+      const result = await createPost(title, description, price, willDeliver);
+      navigate('/allposts');
     } catch (error) {
       console.log(error);
     }
   };
 
 
-   async function createPost(name, description, price) {
+   async function createPost(title, description, price) {
      try {
-         const response = await fetch("http://localhost:3000/api/products/post", {
-             method: "POST",
-             headers: {
-                 "Content-Type": "application/json",
-             },
-             body: JSON.stringify({
-                 name: name,
+        const token = localStorage.getItem("token");
+         const response = await fetch("https://strangers-things.herokuapp.com/api/2306-FTB-ET-WEB-AM/posts", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+              post: {
+                 title: title,
                  description: description,
                  price: price,
-                 userID: userID
-             })
-         });
+                 willDeliver: deliver
+              }
+          })
+      });  
          
          if (response.status === 200) {
              // The POST request was successful (status code 200 Created)
@@ -85,7 +82,7 @@ export default function CreatePost() {
  }
 
  
- const handleNameChange = (e) => {
+ const handleTitleChange = (e) => {
   setName(e.target.value);
 };
 
@@ -99,78 +96,68 @@ const handlePriceChange = (e) => {
 
   return (
     <>
-    {/* <ThemeProvider theme={defaultTheme} > */}
-      <Container component="main" maxWidth="xs" >
+   
+   <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />
         
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5">
-            Sell Your Outdoor Gear!
+          <Typography component="h1" variant="h5" sx={{fontFamily: "ST", fontSize: "3em"}}>
+           Sell Your Things!
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  onChange={handleNameChange}
-                  id="name"
-                  label="What are you selling?"
-                  name="name"
-                  autoComplete="name"
-                />
-              </Grid>
-              <Grid item xs={24}>
-                <TextField
-                  required
-                  fullWidth
-                  multiline
-                  rows={"6"}
-                  onChange={handleDescriptionChange}
-                  name="password"
-                  label="How would you describe it?"
-                  type="description"
-                  id="description"
-                  autoComplete="description"
-                />
-              </Grid>
-              <Grid item xs={24}>
-                <TextField
-                  required
-                  fullWidth
-                  onChange={handlePriceChange}
-                  name="price"
-                  label="How much do you want for it?"
-                  type="price"
-                  id="price"
-                  autoComplete="price"
-                />
-              </Grid>
-            </Grid>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="Username"
+              label="UserName"
+              name="Username"
+              autoComplete="Username"
+              onChange={handleTitleChange}
+              autoFocus
+              InputLabelProps={{
+                style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
+                InputProps={{
+                  style: { color: 'red', fontFamily: "ST" } // 
+                }}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              onChange={handleDescriptionChange}
+              autoComplete="current-password"
+              InputLabelProps={{
+                style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
+                InputProps={{
+                  style: { color: 'red', fontFamily: "ST" } // 
+                }}
+            />
+
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, backgroundColor: "red", color: "black", fontFamily: "ST", fontSize: "2em" }}
             >
-              Sell your gear!
+              Submit
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-              </Grid>
-            </Grid>
+        
+           
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
-    {/* </ThemeProvider> */}
+      <Copyright sx={{ mt: 8, mb: 4, fontFamily: "ST" }} />
     </>
   );
 }
