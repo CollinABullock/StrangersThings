@@ -8,6 +8,8 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 function Copyright(props) {
   return (
@@ -28,6 +30,7 @@ export default function CreatePost2() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [deliver, setDeliver] = useState(false);
   const navigate = useNavigate();
 
 
@@ -38,7 +41,7 @@ export default function CreatePost2() {
     e.preventDefault();
 
     try {
-      const result = await createPost(title, description, price, willDeliver);
+      const result = await createPost(title, description, price, deliver);
       navigate('/allposts');
     } catch (error) {
       console.log(error);
@@ -81,7 +84,7 @@ export default function CreatePost2() {
 
  
  const handleTitleChange = (e) => {
-  setName(e.target.value);
+  setTitle(e.target.value);
 };
 
 const handleDescriptionChange = (e) => {
@@ -129,10 +132,12 @@ const handlePriceChange = (e) => {
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
+              multiline
+              rows={"6"}
+              name="description"
+              label="Description"
+              type="description"
+              id="description"
               onChange={handleDescriptionChange}
               autoComplete="current-password"
               InputLabelProps={{
@@ -141,7 +146,36 @@ const handlePriceChange = (e) => {
                   style: { color: 'red', fontFamily: "ST" } // 
                 }}
             />
-
+            <Grid item xs={24}>
+                <TextField
+                  required
+                  fullWidth
+                  onChange={handlePriceChange}
+                  name="price"
+                  label="How much do you want for it?"
+                  type="price"
+                  id="price"
+                  autoComplete="price"
+                  InputLabelProps={{
+                    style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
+                    InputProps={{
+                      style: { color: 'red', fontFamily: "ST" } // 
+                    }}
+                />
+              </Grid>
+              <FormControlLabel
+  control={
+    <Checkbox
+      checked={deliver}
+      onChange={(e) => {
+        setDeliver(e.target.checked); // Update the state based on the checked property
+      }}
+      color="primary"
+      style={{ border: '1px solid red' }}
+    />
+  }
+  label={<Typography style={{ fontFamily: 'ST, sans-serif' }}>Check box if you're willing to deliver this item</Typography>}
+/>
             <Button
               type="submit"
               fullWidth
