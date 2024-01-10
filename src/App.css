@@ -60,7 +60,7 @@ body {
   justify-content: center, space-evenly;
   margin: 2rem;
   padding: 5%;
-  font-family: Kanit;
+  font-family: "ST";
 }
 
 #all-Items-Container {
@@ -81,7 +81,7 @@ button{
   border-color: rgb(180, 25, 25);
   border-radius: 0.5rem;
   font-size: 1.2rem;
-  font-family: edo;
+  font-family: "ST";
   background-color: red;
   color: black;
   letter-spacing: 0.1rem;
@@ -95,7 +95,7 @@ button{
   border-color: rgb(180, 25, 25);
   border-radius: 0.5rem;
   font-size: 1.2rem;
-  font-family: kanit,
+  font-family: "ST",
     sans-serif;
   background-color: red;
   color: black;
@@ -118,7 +118,7 @@ button{
   height: 3rem;
   background-color: black;
   color: #f00808;
-  font-family: kanit,
+  font-family: "ST",
     sans-serif;
   font-size: x-large;
 
@@ -131,7 +131,7 @@ button{
     padding: 1rem;
     margin: 2rem;
     padding: 5%;
-    font-family: Kanit;
+    font-family: "ST";
 
     .link-text {
       text-align: center;
@@ -156,7 +156,7 @@ button{
     border-color: rgb(180, 25, 25);
     border-radius: 0.5rem;
     font-size: 1.2rem;
-    font-family: edo;
+    font-family: "ST";
     background-color: red;
     color: black;
     letter-spacing: 0.1rem;
@@ -170,7 +170,7 @@ button{
     border-color: rgb(180, 25, 25);
     border-radius: 0.5rem;
     font-size: 1.2rem;
-    font-family: edo;
+    font-family: "ST";
     background-color: red;
     color: black;
     letter-spacing: 0.1rem;
@@ -228,7 +228,7 @@ button{
     border-color: rgb(243, 9, 9);
     border-radius: 0.5rem;
     font-size: 1rem;
-    font-family: kanit, sans-serif;
+    font-family: "ST";
     background-color: rgb(20, 20, 20);
     color: white;
     letter-spacing: 0.1rem;
@@ -236,7 +236,7 @@ button{
   
   .links {
     font-size: 2rem;
-    font-family: kanit, sans-serif;
+    font-family: "ST";
     color: rgb(247, 247, 247);
   }
   
@@ -261,7 +261,7 @@ nav {
   border-color: #f00808;
   border-radius: 0.5rem;
   font-size: 1rem;
-  font-family: kanit, sans-serif;
+  font-family: "ST";
   background-color: black;
   color: white;
   letter-spacing: 0.2rem;
@@ -270,7 +270,7 @@ nav {
 
 .links {
   font-size: 2rem;
-  font-family: kanit, sans-serif;
+  font-family: "ST";
   color: rgb(247, 247, 247);
 }
 
@@ -318,7 +318,7 @@ nav {
 }
 
 .createlabels {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "ST";
   color: rgb(252, 246, 246);
   background-color: rgba(0, 0, 0, 0.533);
   align-items: center;
@@ -338,7 +338,7 @@ input {
 }
 
 #create-button {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "ST";
   border: solid rgb(241, 12, 12);
   height: 3rem;
   font-size: 1.5rem;
@@ -355,7 +355,7 @@ input {
   font-size: 3rem;
   margin-bottom: 0.55rem;
   color: #f00808;
-  font-family: kanit;
+  font-family: "ST";
 
 }
 
@@ -377,12 +377,12 @@ input {
 
 .filtered-item {
   font-size: 1.5rem;
-  font-family: Kanit;
+  font-family: "ST";
 }
 
 #title {
   font-size: 2rem;
-  font-family: Kanit;
+  font-family: "ST";
 }
 
 #message-seller-container {
@@ -390,12 +390,12 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Kanit;
+  font-family: "ST";
 }
 
 #message-button {
   border-radius: 1rem;
-  font-family: kanit, sans-serif;
+  font-family: "ST";
   border-color: rgb(240, 9, 9);
   background-color: rgb(3, 3, 3);
   color: rgb(253, 248, 248);
@@ -407,7 +407,7 @@ input {
 
 #message-seller {
   font-size: 2.5rem;
-  font-family: kanit, sans-serif;
+  font-family: "ST";
   letter-spacing: 0.1rem;
 }
 

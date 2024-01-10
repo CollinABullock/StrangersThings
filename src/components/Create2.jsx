@@ -16,7 +16,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
 
-      S'More Gear (T Bergin, J Browning, F Burton, C Bullock, A Nunez)
+     Collin A. Bullock
 
       {new Date().getFullYear()}
       {'.'}
