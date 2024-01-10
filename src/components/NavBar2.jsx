@@ -8,8 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import Avatar from '@mui/material/Avatar';
+import { motion } from "framer-motion"
 import MenuItem from '@mui/material/MenuItem';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -59,6 +58,11 @@ function ResponsiveAppBar() {
 
 
   return (
+    <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.2 }}
+  >
     <AppBar position="static" sx={{backgroundColor: "black", borderRadius: "100px", margin: "0 auto", marginTop: "10px", width: "90%", padding: "10px"}}>
       {isLoggedIn ? (
         <>
@@ -255,6 +259,7 @@ function ResponsiveAppBar() {
       </>
       )}
     </AppBar>
+    </motion.div>
   );
 }
 export default ResponsiveAppBar;

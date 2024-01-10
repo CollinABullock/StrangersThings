@@ -159,6 +159,7 @@ const handlePriceChange = (e) => {
                   type="number"
                   id="price"
                   autoComplete="price"
+                  sx={{marginBottom: "30px"}}
                   InputLabelProps={{
                     style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
                     InputProps={{
