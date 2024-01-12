@@ -115,12 +115,12 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center" fontFamily={"ST"}><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
-              <MenuItem      onClick={() => {
+              <MenuItem onClick={() => {
               setIsLoggedIn(false);
               localStorage.clear();
               sessionStorage.clear();
               navigate("/")
-          }>
+              }}>
                   <Typography textAlign="center" fontFamily={"ST"}>Log Out</Typography>
                 </MenuItem>
             </Menu>
@@ -242,7 +242,7 @@ function ResponsiveAppBar() {
             >
           {unLoggedPages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><a href={page.url}>{page.title}</a></Typography>
+                  <Typography textAlign="center" fontFamily={"ST"}><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
             </Menu>
