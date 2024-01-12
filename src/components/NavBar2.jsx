@@ -115,6 +115,14 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center" fontFamily={"ST"}><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
               ))}
+              <MenuItem      onClick={() => {
+              setIsLoggedIn(false);
+              localStorage.clear();
+              sessionStorage.clear();
+              navigate("/")
+          }>
+                  <Typography textAlign="center" fontFamily={"ST"}>Log Out</Typography>
+                </MenuItem>
             </Menu>
           </Box>
          
