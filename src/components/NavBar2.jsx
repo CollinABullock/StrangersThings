@@ -19,6 +19,11 @@ const pages = [
   { title: "What's for sale?", url: "/allposts", id: "4" },
 ];
 
+const unLoggedPages = [
+  { title: "Login", url: "/", id: "1" },
+  { title: "Register", url: "/register", id: "2" },
+];
+
 
 
 function ResponsiveAppBar() {
@@ -227,7 +232,7 @@ function ResponsiveAppBar() {
               sx={{
                 display: { xs: 'block', md: 'none' }, fontSize: "1em"}}
             >
-          {pages.map((page) => (
+          {unLoggedPages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"><a href={page.url}>{page.title}</a></Typography>
                 </MenuItem>
