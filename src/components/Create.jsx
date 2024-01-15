@@ -29,18 +29,15 @@ export default function CreatePost2() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [location, setLocation] = useState("");
   const [deliver, setDeliver] = useState(false);
   const navigate = useNavigate();
-
-
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const result = await createPost(title, description, price, deliver);
+      const result = await createPost(title, description, price, deliver, location);
       navigate('/allposts');
     } catch (error) {
       console.log(error);
@@ -48,7 +45,7 @@ export default function CreatePost2() {
   };
 
 
-   async function createPost(title, description, price) {
+   async function createPost(title, description, price, deliver, location) {
      try {
         const token = localStorage.getItem("token");
          const response = await fetch("https://strangers-things.herokuapp.com/api/2306-FTB-ET-WEB-AM/posts", {
@@ -62,7 +59,8 @@ export default function CreatePost2() {
                  title: title,
                  description: description,
                  price: price,
-                 willDeliver: deliver
+                 willDeliver: deliver,
+                 location: location
               }
           })
       });  
@@ -94,6 +92,10 @@ const handlePriceChange = (e) => {
   setPrice(e.target.value);
 };
 
+const handleLocationChange = (e) => {
+  setLocation(e.target.value);
+};
+
   return (
     <>
    
@@ -115,7 +117,6 @@ const handlePriceChange = (e) => {
   margin="normal"
   required
   fullWidth
-  id="title"
   label="What are you selling?"
   name="title"
   autoComplete="title"
@@ -125,7 +126,25 @@ const handlePriceChange = (e) => {
     style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" }
   }}
   InputProps={{
-    style: { color: 'red', fontFamily: "courier" }
+    style: { color: 'red', fontFamily: "ST" }
+  }}
+/>
+
+<TextField
+  margin="normal"
+  required
+  fullWidth
+  id="location"
+  label="Where are you located?"
+  name="location"
+  autoComplete="location"
+  onChange={handleLocationChange}
+  autoFocus
+  InputLabelProps={{
+    style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" }
+  }}
+  InputProps={{
+    style: { color: 'red', fontFamily: "ST" }
   }}
 />
 
@@ -148,6 +167,8 @@ const handlePriceChange = (e) => {
     style: { color: 'red', fontFamily: "ST" }
   }}
 />
+
+
 
             <Grid item xs={24}>
                 <TextField

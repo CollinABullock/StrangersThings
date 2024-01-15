@@ -42,9 +42,10 @@ export default function SignUp() {
         const result = await registerUser(username, password);
         localStorage.setItem('token', result.data.token);
         navigate('/allposts');
+        setMessage("Welcome to Stranger's Things!")
       } catch (error) {
         console.error(error);
-        setMessage("Registration unsuccessful, please try again")
+        setMessage("Username already exists, please choose another")
 
       }
     };

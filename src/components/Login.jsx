@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion"
+import ReactModal from "react-modal";
 
 
 function Copyright(props) {
@@ -32,6 +33,7 @@ export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  
 
   const navigate = useNavigate();
  
@@ -83,7 +85,7 @@ export default function SignIn() {
       <motion.div
     initial={{ opacity: 0, x: -100 }}
     animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 5, delay: 0.0 }}
+    transition={{ duration: 3, delay: 0.0 }}
   >
       <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />
@@ -111,7 +113,7 @@ export default function SignIn() {
               InputLabelProps={{
                 style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
                 InputProps={{
-                  style: { color: 'red', fontFamily: "ST" } // 
+                  style: { color: 'red', fontFamily: "ST",  } // 
                 }}
             />
             <TextField
@@ -139,7 +141,7 @@ export default function SignIn() {
             >
               Submit
             </Button>
-            <h1>{message}</h1>
+            <h3>{message}</h3>
             <Grid container>
               <Grid item>
                 <Link href="/register" variant="body2" sx={{fontFamily: "ST", color: "red"}}>

@@ -365,6 +365,7 @@ input {
   align-items: center;
   text-align: center;
   width: 95%;
+  margin: 0 auto;
 }
 
 #message-author {
@@ -373,7 +374,9 @@ input {
   border-color: #f00808;
   border: double;
   border-width: .25rem;
-  width: 95%;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .filtered-item {
@@ -429,7 +432,7 @@ textarea {
   background-color: rgba(12, 12, 12, 0.884);
   color: red;
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
   font-size: 2em;
 }
 
