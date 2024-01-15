@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./Messages.css"
+// import "./Messages.css"
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -53,9 +53,8 @@ function Message(props) {
         <label htmlFor="messages">
           <textarea
             rows="10"
-            cols="25"
+            cols="40"
             value={newMessage}
-            placeholder="Message to Seller Here"
             onChange={(e) => {
               console.log(e.target.value);
               setNewMessage(e.target.value);

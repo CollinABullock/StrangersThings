@@ -28,9 +28,10 @@ function Copyright(props) {
 const COHORT_NAME = '2306-FTB-ET-WEB-AM';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-export default function SignIn(props) {
+export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const navigate = useNavigate();
  
@@ -40,15 +41,11 @@ export default function SignIn(props) {
     try {
       const result = await loginUser();
       localStorage.setItem('token', result.data.token);
+      setMessage(result.message)
       navigate('/allposts');
     } catch (error) {
       console.error(error);
-
-      if (error.response && error.response.data && error.response.data.message) {
-        handleOpenMessageModal(error.response.data.message, false);
-      } else {
-        handleOpenMessageModal('An error occurred during login.', false);
-      }
+      setMessage("Login unsuccessful, please check your username and password")
     }
   };
 
@@ -142,6 +139,7 @@ export default function SignIn(props) {
             >
               Submit
             </Button>
+            <h1>{message}</h1>
             <Grid container>
               <Grid item>
                 <Link href="/register" variant="body2" sx={{fontFamily: "ST", color: "red"}}>

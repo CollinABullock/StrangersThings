@@ -34,10 +34,12 @@ const SingleItem = (props) => {
 
         <div className="single-item-container">
           <h2 id="title">{filteredItem.title}</h2>
-          <p className="filtered-item">Author: {filteredItem.author.username}</p>
-          <p className="filtered-item">Description: {filteredItem.description}</p>
-          <p className="filtered-item">Price: ${filteredItem.price}</p>
-          <p className="filtered-item">Will Deliver:  {filteredItem.willDeliver}</p>
+          <p className="filtered-item">Seller:<br /> {filteredItem.author.username}</p>
+          <p className="filtered-item">Location:<br /> {filteredItem.location}</p>
+          <p className="filtered-item">Description:<br />{filteredItem.description}</p>
+          <p className="filtered-item">Price:<br /> ${filteredItem.price}</p>
+          <p className="filtered-item">{filteredItem.willDeliver ? "Seller will deliver this item" : "Seller requests pickup only"}
+</p>
           <div id="message-author">
             <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
           </div>

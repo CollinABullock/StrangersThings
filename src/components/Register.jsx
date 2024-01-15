@@ -33,6 +33,7 @@ export default function SignUp() {
 
   const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -43,6 +44,7 @@ export default function SignUp() {
         navigate('/allposts');
       } catch (error) {
         console.error(error);
+        setMessage("Registration unsuccessful, please try again")
 
       }
     };
@@ -137,6 +139,7 @@ export default function SignUp() {
             >
               Submit
             </Button>
+            <h1>{message}</h1>
             <Grid container>
               <Grid item>
                 <Link href="/login" variant="body2" sx={{fontFamily: "ST", color: "red"}}>

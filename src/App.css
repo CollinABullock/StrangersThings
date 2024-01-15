@@ -204,7 +204,7 @@ button{
   }
     :placeholder-shown{
       font-size: 1.5rem;
-      color: blue;
+      color: red
     }
   
     
@@ -364,7 +364,6 @@ input {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 3rem;
   width: 95%;
 }
 
@@ -383,7 +382,7 @@ input {
 }
 
 #title {
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: "ST";
 }
 
@@ -393,7 +392,8 @@ input {
   justify-content: center;
   align-items: center;
   font-family: "ST";
-  width: 95%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 #message-button {
@@ -430,6 +430,7 @@ textarea {
   color: red;
   margin: 0 auto;
   width: 95%;
+  font-size: 2em;
 }
 
 .message-container{
