@@ -2,8 +2,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -11,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion"
 
 
 function Copyright(props) {
@@ -84,6 +83,11 @@ export default function SignIn(props) {
 
   return (
     <>
+      <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 5, delay: 0.0 }}
+  >
       <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />
         <Box
@@ -129,10 +133,6 @@ export default function SignIn(props) {
                   style: { color: 'red', fontFamily: "ST" } // 
                 }}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" style={{ border: '1px solid red', marginRight: "10px"}} />}
-              label={<Typography style={{ fontFamily: 'ST, sans-serif' }}>Remember me</Typography>}
-            />
 
             <Button
               type="submit"
@@ -153,6 +153,7 @@ export default function SignIn(props) {
         </Box>
       </Container>
       <Copyright sx={{ mt: 8, mb: 4, fontFamily: "ST" }} />
+      </motion.div>
       </>
   );
 }

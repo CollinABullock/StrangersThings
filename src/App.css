@@ -13,11 +13,12 @@
   font-family: "ST";
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 0;
 }
 
 html {
   background-color: black;
- 
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 /* Old css below */
 
 .link-text {
-    color: rgb(250, 245, 245);
+    color: red;
     text-decoration: none;
   }
   
@@ -47,7 +48,7 @@ body {
 
 
 .link-text {
-  color: rgb(250, 245, 245);
+  color: red;
   text-decoration: none;
 }
 
@@ -72,6 +73,7 @@ body {
   font-size: 1.5rem;
   padding: 0.5rem;
   letter-spacing: 0.1rem;
+  color: red;
 }
 
 button{
@@ -107,9 +109,6 @@ button{
 #searchbar{
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  padding-top: 5rem;
-
 }
 
 
@@ -237,7 +236,7 @@ button{
   .links {
     font-size: 2rem;
     font-family: "ST";
-    color: rgb(247, 247, 247);
+    color: red;
   }
   
 
@@ -271,7 +270,7 @@ nav {
 .links {
   font-size: 2rem;
   font-family: "ST";
-  color: rgb(247, 247, 247);
+  color: red;
 }
 
 
@@ -364,7 +363,9 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin-top: 3rem;
+  width: 95%;
 }
 
 #message-author {
@@ -373,6 +374,7 @@ input {
   border-color: #f00808;
   border: double;
   border-width: .25rem;
+  width: 95%;
 }
 
 .filtered-item {
@@ -391,6 +393,7 @@ input {
   justify-content: center;
   align-items: center;
   font-family: "ST";
+  width: 95%;
 }
 
 #message-button {
@@ -416,14 +419,17 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  width: 95%;
   padding: 1rem;
+  margin: 0 auto;
 }
 
 textarea {
   border: solid rgb(238, 13, 13);
   background-color: rgba(12, 12, 12, 0.884);
-  color: rgb(243, 239, 239);
+  color: red;
+  margin: 0 auto;
+  width: 95%;
 }
 
 .message-container{

@@ -121,7 +121,7 @@ function ResponsiveAppBar() {
               sessionStorage.clear();
               navigate("/")
               }}>
-                  <Typography textAlign="center" fontFamily={"ST"}>Log Out</Typography>
+                  <Typography textAlign="center" fontFamily={"ST"}><a href="/">Log Out</a></Typography>
                 </MenuItem>
             </Menu>
           </Box>

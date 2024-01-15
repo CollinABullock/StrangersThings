@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Delete from "./Delete";
+import { motion } from "framer-motion"
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
@@ -18,7 +19,11 @@ const AllItems = (props) => {
 
   return (
     <>
-
+   <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, delay: 0.2 }}
+  >
       <form id="searchbar">
         <label htmlFor="name"></label>
         <input id="search"
@@ -33,6 +38,7 @@ const AllItems = (props) => {
           }}
         ></input>
       </form>
+   
 
       <div id="all-Items-Container">
         {filteredItems.length ? (
@@ -62,6 +68,7 @@ const AllItems = (props) => {
           <p>No Results Found</p>
         )}
       </div>
+      </motion.div>
     </>
   );
 };

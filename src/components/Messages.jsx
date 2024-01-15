@@ -53,7 +53,7 @@ function Message(props) {
         <label htmlFor="messages">
           <textarea
             rows="10"
-            cols="30"
+            cols="25"
             value={newMessage}
             placeholder="Message to Seller Here"
             onChange={(e) => {

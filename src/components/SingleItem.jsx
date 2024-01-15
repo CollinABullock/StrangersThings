@@ -1,7 +1,6 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Message from "./Messages";
-import "./SingleItem.css"
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -37,8 +36,8 @@ const SingleItem = (props) => {
           <h2 id="title">{filteredItem.title}</h2>
           <p className="filtered-item">Author: {filteredItem.author.username}</p>
           <p className="filtered-item">Description: {filteredItem.description}</p>
-          <p className="filtered-item">Price: {filteredItem.price}</p>
-          <p className="filtered-item">{filteredItem.willDeliver}</p>
+          <p className="filtered-item">Price: ${filteredItem.price}</p>
+          <p className="filtered-item">Will Deliver:  {filteredItem.willDeliver}</p>
           <div id="message-author">
             <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
           </div>
