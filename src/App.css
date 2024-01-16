@@ -358,6 +358,15 @@ input {
 
 }
 
+a {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  transform: rotateX(180deg);
+}
 
 .single-item-container {
   display: flex;
