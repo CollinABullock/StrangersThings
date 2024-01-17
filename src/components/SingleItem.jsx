@@ -3,6 +3,23 @@ import { useEffect, useState } from "react";
 import Message from "./Messages";
 import Modal from 'react-modal';;
 
+const customModalStyles = {
+  overlay: {
+    backgroundColor: "black",
+  },
+  content: {
+    width: '90%', 
+    margin: '0 auto', // Center the modal horizontally
+    padding: '10px', 
+    display: 'flex',
+    backgroundColor: "black",
+    color: "red",
+    flexDirection: "column",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
+
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
@@ -53,16 +70,17 @@ const SingleItem = (props) => {
           <p className="filtered-item">{filteredItem.willDeliver ? "Seller will deliver this item" : "Seller requests pickup only"}
 </p>
 <div>
-            <button onClick={openModal}>Message Seller</button>
+            <button onClick={openModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Message Seller</button>
           </div>
 <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Message Modal"
+            style={customModalStyles}
           >
             {/* Render the Message component inside the modal */}
             <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
-            <button onClick={closeModal}>Close Modal</button>
+            <button onClick={closeModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Close</button>
           </Modal>
 
         </div>
