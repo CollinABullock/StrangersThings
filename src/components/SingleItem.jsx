@@ -74,10 +74,10 @@ const SingleItem = (props) => {
 <CardMedia
   sx={{ height: 140 }}
   image="https://images.hdqwalls.com/download/stranger-things-2020-q9-3840x2400.jpg"
-  title="reptile"
+  title="stranger things"
 />
 <CardContent>
-  <Typography gutterBottom variant="h5" component="div">
+  <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "3em"}}>
     {filteredItem.title}
   </Typography>
   <Typography variant="body2" color="text.secondary">
