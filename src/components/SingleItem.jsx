@@ -1,6 +1,7 @@
 import { useParams, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Message from "./Messages";
+import Modal from 'react-modal';;
 
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
@@ -8,6 +9,7 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/post
 
 const SingleItem = (props) => {
   const [filteredItem, setFilteredItem] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   console.log(props.items);
   const { id } = useParams();
@@ -28,6 +30,16 @@ const SingleItem = (props) => {
     }
   }, [props.items]);
 
+    // Function to open the modal
+    const openModal = () => {
+      setModalIsOpen(true);
+    };
+  
+    // Function to close the modal
+    const closeModal = () => {
+      setModalIsOpen(false);
+    };
+
   return (
     <div className="single-item-container">
       {filteredItem && filteredItem.title ? (
@@ -40,9 +52,18 @@ const SingleItem = (props) => {
           <p className="filtered-item">Price:<br /> ${filteredItem.price}</p>
           <p className="filtered-item">{filteredItem.willDeliver ? "Seller will deliver this item" : "Seller requests pickup only"}
 </p>
-          <div id="message-author">
-            <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
+<div>
+            <button onClick={openModal}>Message Seller</button>
           </div>
+<Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Message Modal"
+          >
+            {/* Render the Message component inside the modal */}
+            <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
+            <button onClick={closeModal}>Close Modal</button>
+          </Modal>
 
         </div>
       ) : null}
