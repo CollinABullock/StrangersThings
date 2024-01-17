@@ -109,7 +109,7 @@ const handleLocationChange = (e) => {
             alignItems: 'center',
           }}
         >
-          <Typography component="h1" variant="h5" sx={{fontFamily: "ST", fontSize: "3em"}}>
+          <Typography component="h1" variant="h5" sx={{fontFamily: "ST", fontSize: "3em", textAlign: 'center'}}>
            Sell Your Strange Things!
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>

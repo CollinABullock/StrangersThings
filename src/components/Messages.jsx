@@ -1,6 +1,15 @@
 import React from "react";
 import { useState } from "react";
 // import "./Messages.css"
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import SingleItem from "./SingleItem";
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -47,26 +56,37 @@ function Message(props) {
   }
 
   return (
-    <div id="message-seller-container">
-      <h1 id="message-seller">Message Seller</h1>
-      <form id="message-form" onSubmit={handleSubmit}>
+      <form id="message-form" onSubmit={handleSubmit} style={{alignItems: "center"}}>
         <label htmlFor="messages">
-          <textarea
-            rows="10"
-            cols="40"
-            value={newMessage}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setNewMessage(e.target.value);
-            }}
-          />
+        <TextField
+  margin="normal"
+  required
+  fullWidth
+  multiline
+  sx={{width: "80%", backgroundColor: "#222222"}}
+  rows={"6"}
+  name="message seller"
+  label="Message Seller"
+  type="message seller"
+  id="description"
+  value={newMessage}
+  onChange={(e) => {
+    console.log(e.target.value);
+    setNewMessage(e.target.value);
+  }}
+  InputLabelProps={{
+    style: { color: 'red', fontFamily: "ST", width: "100%" }
+  }}
+  InputProps={{
+    style: { color: 'red', fontFamily: "ST", width: "100%" }
+  }}
+/>
         </label>
-
-        <button id="message-button" type="submit">
-          Send
-        </button>
+        <div style={{display: "flex"}}>
+        <button type="submit" style={{padding: "5px", height: "auto", margin: "10px",}}>Send Message</button>
+        <button type="submit" style={{padding: "5px", height: "auto", margin: "10px",}}>Send Message</button>
+        </div>
       </form>
-    </div>
   );
 }
 
