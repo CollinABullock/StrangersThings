@@ -11,7 +11,6 @@ import ResponsiveAppBar from "./components/NavBar2";
 import CreatePost2 from "./components/Create2";
 import Particles from "react-tsparticles";
 import ParticlesTest from "./components/Particles";
-import SingleItem2 from "./components/singleItem2";
 
 
 
@@ -191,7 +190,7 @@ function App() {
 
         <Route
           path="/post/:id"
-          element={<SingleItem2 items={items} isLoggedIn={isLoggedIn} />}
+          element={<SingleItem items={items} isLoggedIn={isLoggedIn} />}
         />
 
         

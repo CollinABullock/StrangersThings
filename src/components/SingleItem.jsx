@@ -67,43 +67,41 @@ const SingleItem = (props) => {
     };
 
   return (
-    <div className="single-item-container">
+    <>
       {filteredItem && filteredItem.title ? (
 
-        <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="reptile"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {filteredItem.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        {filteredItem.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">{filteredItem.price}</Button>
-        <Button size="small" onClick={openModal}>Message Seller</Button>
-<div>
-            <button onClick={openModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Message Seller</button>
-          </div>
-<Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Message Modal"
-            style={customModalStyles}
-          >
-            {/* Render the Message component inside the modal */}
-            <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
-            <button onClick={closeModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Close</button>
-          </Modal>
-
-        </div>
-      ) : null}
-    </div>
+<Card sx={{ width: "70%", backgroundColor: "black", color: "red", fontFamily: "ST", alignItems: "center", justifyContent: "center", textAlign: "center", margin: "0 auto"  }}>
+<CardMedia
+  sx={{ height: 140 }}
+  image="https://images.hdqwalls.com/download/stranger-things-2020-q9-3840x2400.jpg"
+  title="reptile"
+/>
+<CardContent>
+  <Typography gutterBottom variant="h5" component="div">
+    {filteredItem.title}
+  </Typography>
+  <Typography variant="body2" color="text.secondary">
+  {filteredItem.description}
+  </Typography>
+</CardContent>
+<CardActions>
+  <Button size="small">{filteredItem.price}</Button>
+  <Button size="small" onClick={openModal}>Message Seller</Button>
+  <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      contentLabel="Message Modal"
+      style={customModalStyles}
+    >
+      {/* Render the Message component inside the modal */}
+      <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
+      <button onClick={closeModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Close</button>
+    </Modal>
+</CardActions>
+</Card>) : (
+        <h1>Nothing to see here</h1>
+      )}
+    </>
   );
 };
 

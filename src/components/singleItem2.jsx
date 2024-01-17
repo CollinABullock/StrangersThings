@@ -68,14 +68,14 @@ export default function SingleItem2(props) {
     };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: 'black' }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
         title="reptile"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{backgroundColor: 'black', color: "red", fontFamily: "ST"}}>
           {filteredItem.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
