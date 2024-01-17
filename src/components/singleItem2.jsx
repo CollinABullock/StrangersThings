@@ -1,13 +1,14 @@
-import { useParams, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Message from "./Messages";
-import Modal from 'react-modal';
+import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Message from "./Messages";
+import Modal from 'react-modal';
 
 const customModalStyles = {
   overlay: {
@@ -29,11 +30,11 @@ const customModalStyles = {
   },
 };
 
-
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
 
-const SingleItem = (props) => {
+export default function SingleItem2(props) {
+
   const [filteredItem, setFilteredItem] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -67,10 +68,7 @@ const SingleItem = (props) => {
     };
 
   return (
-    <div className="single-item-container">
-      {filteredItem && filteredItem.title ? (
-
-        <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
@@ -87,10 +85,7 @@ const SingleItem = (props) => {
       <CardActions>
         <Button size="small">{filteredItem.price}</Button>
         <Button size="small" onClick={openModal}>Message Seller</Button>
-<div>
-            <button onClick={openModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Message Seller</button>
-          </div>
-<Modal
+        <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Message Modal"
@@ -100,11 +95,7 @@ const SingleItem = (props) => {
             <Message isLoggedIn={props.isLoggedIn} id={filteredItem._id} />
             <button onClick={closeModal} style={{padding: "5px", height: "auto", marginBottom: "20px"}}>Close</button>
           </Modal>
-
-        </div>
-      ) : null}
-    </div>
+      </CardActions>
+    </Card>
   );
-};
-
-export default SingleItem;
+}

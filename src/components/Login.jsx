@@ -85,7 +85,7 @@ export default function SignIn() {
       <motion.div
     initial={{ opacity: 0, x: -100 }}
     animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 3, delay: 0.0 }}
+    transition={{ duration: 2, delay: 0.0 }}
   >
       <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />

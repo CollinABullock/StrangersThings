@@ -375,6 +375,7 @@ a:hover {
   text-align: center;
   width: 95%;
   margin: 0 auto;
+  padding: 10px;
 }
 
 #message-author {

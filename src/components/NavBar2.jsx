@@ -66,7 +66,7 @@ function ResponsiveAppBar() {
     <motion.div
     initial={{ opacity: 0, x: -100 }}
     animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 1, delay: 0.2 }}
+    transition={{ duration: 2, delay: 0.2 }}
   >
     <AppBar position="static" sx={{backgroundColor: "black", borderRadius: "100px", margin: "0 auto", marginTop: "10px", width: "90%", padding: "10px"}}>
       {isLoggedIn ? (
