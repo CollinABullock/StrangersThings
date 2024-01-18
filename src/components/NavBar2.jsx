@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import MenuItem from '@mui/material/MenuItem';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

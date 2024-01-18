@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion"
-import ReactModal from "react-modal";
 
 
 function Copyright(props) {
@@ -110,8 +109,9 @@ export default function SignIn() {
               autoComplete="Username"
               onChange={handleNameChange}
               autoFocus
+              sx={{backgroundColor: "#222222"}}
               InputLabelProps={{
-                style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
+                style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red",  } }}
                 InputProps={{
                   style: { color: 'red', fontFamily: "ST",  } // 
                 }}
@@ -125,6 +125,7 @@ export default function SignIn() {
               type="password"
               id="password"
               onChange={handlePasswordChange}
+              sx={{backgroundColor: "#222222"}}
               autoComplete="current-password"
               InputLabelProps={{
                 style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}

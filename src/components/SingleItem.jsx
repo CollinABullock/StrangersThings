@@ -8,6 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { motion } from "framer-motion";
 
 const customModalStyles = {
   overlay: {
@@ -69,6 +70,11 @@ const SingleItem = (props) => {
 
   return (
     <>
+       <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 2, delay: 0.2 }}
+  >
       {filteredItem && filteredItem.title ? (
 
 <Card sx={{ width: "70%", backgroundColor: "black", color: "red", fontFamily: "ST", alignItems: "center", justifyContent: "center", textAlign: "center", margin: "0 auto", cursor: "pointer"  }} >
@@ -78,14 +84,14 @@ const SingleItem = (props) => {
   title="stranger things"
 />
 <CardContent>
-  <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "2.5em", textDecoration: "underline"}}>
+  <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "2.5em", textDecoration: "underline", marginBottom: "20px"}}>
     {filteredItem.title}
   </Typography>
-  <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1.5em"}}>Sold by {filteredItem.author.username}</Typography>
-  <Typography variant="body2" sx={{color: "red", fontFamily: "ST", fontSize: "1.5em"}}>
+  <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1.5em", marginBottom: "20px"}}>Sold by {filteredItem.author.username}</Typography>
+  <Typography variant="body2" sx={{color: "red", fontFamily: "ST", fontSize: "1.5em", marginBottom: "20px"}}>
   Description:  {filteredItem.description}
   </Typography>
-  <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1.5em"}}>Location:  {filteredItem.location}</Typography>
+  <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1.5em", marginBottom: "20px", marginBottom: "20px"}}>Location:  {filteredItem.location}</Typography>
 </CardContent>
 <CardActions style={{ display: 'flex', justifyContent: 'center' }}>
   <Typography size="small" sx={{color: "red", fontFamily: "ST", fontSize: "1em", width: "30%", margin: "10px"}}>${filteredItem.price}</Typography>
@@ -104,6 +110,7 @@ const SingleItem = (props) => {
 </Card>) : (
         <h1>Nothing to see here</h1>
       )}
+      </motion.div>
     </>
   );
 };

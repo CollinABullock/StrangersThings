@@ -11,10 +11,6 @@ import ResponsiveAppBar from "./components/NavBar2";
 import CreatePost2 from "./components/Create2";
 import Particles from "react-tsparticles";
 import ParticlesTest from "./components/Particles";
-
-
-
-
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/posts`;
 
@@ -57,14 +53,14 @@ function App() {
         },
       },
       color: {
-        value: "#ff0000", // red color
+        value: "white", // red color
       },
       shape: {
         type: "circle",
         stroke: {
           width: 0,
           color: {
-            value: "#ff0000", // red color
+            value: "white", // red color
           },
         },
         polygon: {

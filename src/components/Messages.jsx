@@ -4,12 +4,6 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import SingleItem from "./SingleItem";
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
@@ -56,7 +50,7 @@ function Message(props) {
   }
 
   return (
-      <form id="message-form" onSubmit={handleSubmit} style={{alignItems: "center"}}>
+      <form id="message-form" onSubmit={handleSubmit} style={{alignItems: "center", display: "flex"}}>
         <label htmlFor="messages">
         <TextField
   margin="normal"
@@ -82,10 +76,9 @@ function Message(props) {
   }}
 />
         </label>
-        <div style={{display: "flex"}}>
+        
         <button type="submit" style={{padding: "5px", height: "auto", margin: "10px",}}>Send Message</button>
-        <button type="submit" style={{padding: "5px", height: "auto", margin: "10px",}}>Send Message</button>
-        </div>
+      
       </form>
   );
 }

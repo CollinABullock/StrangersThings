@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-
+import { motion } from "framer-motion";
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -86,6 +86,11 @@ export default function SignUp() {
 
   return (
     <>
+    <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 2, delay: 0.2 }}
+  >
       <Container component="main" maxWidth="100%" sx={{backgroundColor: "black", color: "red", height: "100%"}}>
         <CssBaseline />
         <Box
@@ -109,6 +114,7 @@ export default function SignUp() {
               autoComplete="Username"
               onChange={handleNameChange}
               autoFocus
+              sx={{backgroundColor: "#222222"}}
               InputLabelProps={{
                 style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
                 InputProps={{
@@ -124,7 +130,8 @@ export default function SignUp() {
               type="password"
               id="password"
               onChange={handlePasswordChange}
-              autoComplete="current-password"
+              sx={{backgroundColor: "#222222"}}
+              autoComplete="password"
               InputLabelProps={{
                 style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
                 InputProps={{
@@ -152,6 +159,7 @@ export default function SignUp() {
         </Box>
       </Container>
       <Copyright sx={{ mt: 8, mb: 4, fontFamily: "ST" }} />
+      </motion.div>
     </>
   );
 }
