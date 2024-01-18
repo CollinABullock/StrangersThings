@@ -1,16 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import "./Messages.css"
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 
 const COHORT_NAME = "2306-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 function Message(props) {
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [newMessage, setNewMessage] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }else {
+      setIsLoggedIn(false);
+    }
+    // sets local storage
+  }, [localStorage.getItem("token")]);
+
+  console.log(isLoggedIn);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +33,8 @@ function Message(props) {
   };
 
   async function createMessage(postId) {
-    console.log(props.isLoggedIn);
     try {
-      if (props.isLoggedIn) {
+      if (isLoggedIn) {
         const token = localStorage.getItem("token");
         console.log("This is the new message", newMessage);
         const response = await fetch(`${BASE_URL}/posts/${postId}/messages`, {
@@ -43,6 +53,8 @@ function Message(props) {
         console.log(result);
         setNewMessage(result.messages);
         alert("Your message was sent!");
+        // having the window relod after the alert cause that's easier and more asthetically pleasing than having a close window function.
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);
@@ -77,7 +89,7 @@ function Message(props) {
 />
         </label>
         
-        <button type="submit" style={{padding: "5px", height: "auto", margin: "10px",}}>Send Message</button>
+        <Button type="submit" style={{padding: "5px", height: "auto", margin: "10px", backgroundColor: "red", fontFamily: "ST", color: "black"}}>Send Message</Button>
       
       </form>
   );
