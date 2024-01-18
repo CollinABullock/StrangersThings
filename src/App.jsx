@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AllItems from "./components/AllItems";
@@ -176,11 +177,12 @@ function App() {
         <Route
           path="/"
           element={
-            <Login
-              loggedInUser={loggedInUser}
-              items={items}
-              setItems={setItems}
-            />
+            isLoggedIn ? (
+              <AllItems items={items} isLoggedIn={isLoggedIn}/>
+            ) : (
+              <Login items={items} isLoggedIn={isLoggedIn}
+              />
+            )
           }
         />
 

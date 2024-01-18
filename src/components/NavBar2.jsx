@@ -190,7 +190,7 @@ function ResponsiveAppBar() {
             onClick={() => {
               setIsLoggedIn(false);
               localStorage.removeItem("token"); //Removes token from local storage when logout is clicked.
-              navigate("/")
+              navigate("/login")
           }}>Logout
           </button>
                   </Typography>

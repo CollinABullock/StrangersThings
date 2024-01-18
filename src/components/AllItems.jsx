@@ -11,7 +11,7 @@ const AllItems = (props) => {
  
 
  
-  let filteredItems = props.items.filter((item) => {
+    let filteredItems = props.items.filter((item) => {
     let lowercaseTitle = item.title.toLowerCase();
     let lowercaseQuery = searchQuery.toLowerCase();
 
@@ -38,6 +38,7 @@ const AllItems = (props) => {
       label="Search"
       variant="outlined"
       placeholder="Search"
+      sx={{backgroundColor: "#222222"}}
       InputLabelProps={{
         style: { color: 'red', fontFamily: "ST", outline: "2px 2px 2px red" } }}
         InputProps={{
@@ -45,7 +46,7 @@ const AllItems = (props) => {
         }}
     />
     <IconButton type="submit" aria-label="search">
-      <SearchIcon style={{ fill: "blue" }} />
+      <SearchIcon style={{ fill: "red" }} />
     </IconButton>
   </form>
   </div>
