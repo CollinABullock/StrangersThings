@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
+import ReactCardFlip from "react-card-flip";
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
+  const [flippedCards, setFlippedCards] = useState(false); //Storing the flip to be used below
  
 
  
@@ -19,6 +21,12 @@ const AllItems = (props) => {
       return item;
     }
   });
+
+  const handleCardClick = (index) => {
+    const newFlippedCards = [...flippedCards];
+    newFlippedCards[index] = !newFlippedCards[index];
+    setFlippedCards(newFlippedCards);
+  };
 
   return (
     <>
@@ -51,34 +59,33 @@ const AllItems = (props) => {
   </form>
   </div>
 
-      <div id="all-Items-Container">
-        {filteredItems.length ? (
-          filteredItems.map((e) => {
-            console.log(props.loggedInUser);
-            return (
-              <div key={e._id} className="item-container">
-                
-                <Link className="link-text" to={`/post/${e._id}`}>
-                  {" "}
-                  {e.title.toUpperCase()}{" "}
-                </Link>
-
-                {props.loggedInUser === e.author.username ? (
-                  <Delete
-                    id={e._id}
-                    items={props.items}
-                    setItems={props.setItems}
-                  />
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })
-        ) : (
-          <p>No Results Found</p>
-        )}
-      </div>
+  <div id="all-Items-Container">
+          {filteredItems.length ? (
+            filteredItems.map((e, index) => (
+              <ReactCardFlip key={e._id} isFlipped={flippedCards[index]} flipDirection="vertical">
+                <div key="front" className="item-container" onClick={() => handleCardClick(index)}>
+                  
+                    {e.title.toUpperCase()}
+              
+                  {props.loggedInUser === e.author.username ? (
+                    <Delete
+                      id={e._id}
+                      items={props.items}
+                      setItems={props.setItems}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <div key="back" className="item-container" onClick={() => handleCardClick(index)}>
+                  <h1>FART</h1>
+                </div>
+              </ReactCardFlip>
+            ))
+          ) : (
+            <p>No Results Found</p>
+          )}
+        </div>
       </motion.div>
     </>
   );
