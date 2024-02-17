@@ -80,7 +80,7 @@ const AllItems = (props) => {
                   )}
                 </div>
                 <div key="back" className="item-container" onClick={() => handleCardClick(index)}>
-                  <h1>FART</h1>
+                
                 </div>
               </ReactCardFlip>
             ))
