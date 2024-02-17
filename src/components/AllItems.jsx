@@ -9,7 +9,7 @@ import ReactCardFlip from "react-card-flip";
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
-  const [flippedCards, setFlippedCards] = useState(false); //Storing the flip to be used below
+  
  
 
  
@@ -21,6 +21,8 @@ const AllItems = (props) => {
       return item;
     }
   });
+
+  const [flippedCards, setFlippedCards] = useState(Array(filteredItems.length).fill(false)); // Initialize flippedCards array
 
   const handleCardClick = (index) => {
     const newFlippedCards = [...flippedCards];
