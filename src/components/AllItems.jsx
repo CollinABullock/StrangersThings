@@ -5,14 +5,17 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import ReactCardFlip from "react-card-flip";
-import SingleItem from "./SingleItem";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import React from "react";
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
   
- 
-
- 
     let filteredItems = props.items.filter((item) => {
     let lowercaseTitle = item.title.toLowerCase();
     let lowercaseQuery = searchQuery.toLowerCase();
@@ -23,6 +26,7 @@ const AllItems = (props) => {
   });
 
   const [flippedCards, setFlippedCards] = useState(Array(filteredItems.length).fill(false)); // Initialize flippedCards array
+
 
   const handleCardClick = (index) => {
     const newFlippedCards = [...flippedCards];
@@ -66,9 +70,10 @@ const AllItems = (props) => {
             filteredItems.map((e, index) => (
               <ReactCardFlip key={e._id} isFlipped={flippedCards[index]} flipDirection="vertical">
                 <div key="front" style={{height: "100px"}} className="item-container" onClick={() => handleCardClick(index)}>
+                
                   
                     {e.title.toUpperCase()}
-              
+             
                   {props.loggedInUser === e.author.username ? (
                     <Delete
                       id={e._id}
@@ -79,9 +84,23 @@ const AllItems = (props) => {
                     ""
                   )}
                 </div>
-                <div key="back" style={{height: "300px"}} className="item-container" onClick={() => handleCardClick(index)}>
-                <p>{e.title.toUpperCase()}</p>
-                </div>
+                <div >
+                <CardContent>
+        <Typography variant="h5" component="div" style={{fontFamily: "ST"}}>
+         {e.title.toLowerCase()}
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          adjective
+        </Typography>
+        <Typography variant="body2" style={{fontSize: "2em"}}>
+          {e.description}
+          <br />
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+      </div>
               </ReactCardFlip>
             ))
           ) : (
