@@ -5,10 +5,6 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import ReactCardFlip from "react-card-flip";
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import React from "react";
@@ -119,7 +115,7 @@ const AllItems = (props) => {
                     ""
                   )}
                 </div>
-                <div className="item-containerBACK" onClick={() => handleCardClick(index)} style={{height: "600px"}}>
+                <div className="item-containerBACK" onClick={() => handleCardClick(index)} style={{minHeightheight: "500px"}}>
                 <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "1em",}}>
                 {e.title}
                 </Typography>
@@ -129,7 +125,7 @@ const AllItems = (props) => {
                 <Typography variant="body2" sx={{color: "red", fontFamily: "ST", fontSize: "1.25em", marginBottom: "20px"}}>
   {e.description}
   </Typography>
-  <Button size="small" onClick={openModal} sx={{color: "red", fontFamily: "ST", fontSize: "1em", width: "30%", margin: "10px"}}>Message {e.author.username}</Button>
+  <Button size="small" onClick={openModal} sx={{backgroundColor: "red", color: "white", fontFamily: "ST", fontSize: "1em", width: "100%", margin: "0 auto"}}>Message {e.author.username}</Button>
   <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
