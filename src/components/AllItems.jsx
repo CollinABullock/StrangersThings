@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Delete from "./Delete";
 import { motion } from "framer-motion";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import ReactCardFlip from "react-card-flip";
+import SingleItem from "./SingleItem";
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
@@ -65,7 +65,7 @@ const AllItems = (props) => {
           {filteredItems.length ? (
             filteredItems.map((e, index) => (
               <ReactCardFlip key={e._id} isFlipped={flippedCards[index]} flipDirection="vertical">
-                <div key="front" className="item-container" onClick={() => handleCardClick(index)}>
+                <div key="front" style={{height: "100px"}} className="item-container" onClick={() => handleCardClick(index)}>
                   
                     {e.title.toUpperCase()}
               
