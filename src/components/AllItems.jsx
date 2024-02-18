@@ -79,8 +79,8 @@ const AllItems = (props) => {
                     ""
                   )}
                 </div>
-                <div key="back" className="item-container" onClick={() => handleCardClick(index)}>
-                
+                <div key="back" style={{height: "300px"}} className="item-container" onClick={() => handleCardClick(index)}>
+                <p>{e.title.toUpperCase()}</p>
                 </div>
               </ReactCardFlip>
             ))
