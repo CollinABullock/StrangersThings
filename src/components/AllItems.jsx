@@ -65,7 +65,7 @@ const AllItems = (props) => {
   </form>
   </div>
 
-  <div id="all-Items-Container">
+  <div id="all-Items-Container" style={{width: "100%"}}>
           {filteredItems.length ? (
             filteredItems.map((e, index) => (
               <ReactCardFlip key={e._id} isFlipped={flippedCards[index]} flipDirection="vertical">
@@ -84,22 +84,11 @@ const AllItems = (props) => {
                     ""
                   )}
                 </div>
-                <div >
-                <CardContent>
-        <Typography variant="h5" component="div" style={{fontFamily: "ST"}}>
-         {e.title.toLowerCase()}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" style={{fontSize: "2em"}}>
-          {e.description}
-          <br />
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+                <div className="item-containerBACK" onClick={() => handleCardClick(index)} style={{height: "600px"}}>
+                <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "1em",}}>
+                {e.title}
+                </Typography>
+                <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1em", marginBottom: "20px"}}>Sold by {e.author.username}</Typography>
       </div>
               </ReactCardFlip>
             ))

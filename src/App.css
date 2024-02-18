@@ -46,6 +46,16 @@ body {
     box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
     justify-content: center, space-evenly;}
 
+    .item-containerBACK {
+      width: 20rem;
+      border: 2px solid #f00808;
+      background-color: rgba(7, 7, 7, 0.448);
+      box-shadow: 20px 20px 10px rgba(245, 243, 243, 0.384);
+      justify-content: center, space-evenly;
+      padding: 10px;
+      margin: 10px;
+    }
+
 
 .link-text {
   color: red;
