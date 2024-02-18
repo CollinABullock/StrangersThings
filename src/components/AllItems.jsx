@@ -12,9 +12,34 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import React from "react";
+import Message from "./Messages";
+import Modal from 'react-modal';
+
+const customModalStyles = {
+  overlay: {
+    backgroundColor: "black",
+    padding: "20px",
+    width: "50%",
+    height: "60%",
+    margin: "0 auto"
+  },
+  content: {
+    width: '80%', 
+    margin: '0 auto', // Center the modal horizontally
+    padding: '20px', 
+    display: 'flex',
+    backgroundColor: "black",
+    color: "red",
+    flexDirection: "column",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
 
 const AllItems = (props) => {
   const [searchQuery, setSearchQuery] = useState(""); //Storing the search query.
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   
     let filteredItems = props.items.filter((item) => {
     let lowercaseTitle = item.title.toLowerCase();
@@ -33,6 +58,16 @@ const AllItems = (props) => {
     newFlippedCards[index] = !newFlippedCards[index];
     setFlippedCards(newFlippedCards);
   };
+
+     // Function to open the modal
+     const openModal = () => {
+      setModalIsOpen(true);
+    };
+  
+    // Function to close the modal
+    const closeModal = () => {
+      setModalIsOpen(false);
+    };
 
   return (
     <>
@@ -88,7 +123,23 @@ const AllItems = (props) => {
                 <Typography gutterBottom variant="h5" component="div" sx={{fontFamily: "ST", fontSize: "1em",}}>
                 {e.title}
                 </Typography>
-                <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1em", marginBottom: "20px"}}>Sold by {e.author.username}</Typography>
+                <Typography sx={{color: "red", fontFamily: "ST", fontSize: "1em", marginBottom: "20px"}}>Sold by {e.author.username} <br />
+                Location: {e.location}
+                </Typography>
+                <Typography variant="body2" sx={{color: "red", fontFamily: "ST", fontSize: "1.25em", marginBottom: "20px"}}>
+  {e.description}
+  </Typography>
+  <Button size="small" onClick={openModal} sx={{color: "red", fontFamily: "ST", fontSize: "1em", width: "30%", margin: "10px"}}>Message {e.author.username}</Button>
+  <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      contentLabel="Send message"
+      shouldCloseOnOverlayClick={true}
+      style={customModalStyles}
+    >
+      {/* Render the Message component inside the modal */}
+      <Message isLoggedIn={props.isLoggedIn} id={e._id} />
+    </Modal>
       </div>
               </ReactCardFlip>
             ))
